@@ -117,6 +117,15 @@ function removePreviews()
     });
 }
 
+function disablePagePreviews(pageContainer)
+{
+    const allArticleLinks = pageContainer.querySelectorAll(".page-link");
+    [...allArticleLinks].map((e) => {
+        e.parentNode.removeChild(e);
+        e.mouseIn = false;
+    });
+}
+
 async function popupPreview(evt)
 {
     await sleep(300);
@@ -256,6 +265,7 @@ function updateTOC()
 
 // Rooter
 window.addEventListener("load", async () => {
+    disablePagePreviews(article);
     removePreviews();
     const fileName = window.location.hash.slice(2) || 'homepage';
     
@@ -264,6 +274,7 @@ window.addEventListener("load", async () => {
     updateTOC();
 });
 window.addEventListener("hashchange", async () => {
+    disablePagePreviews(article);
     removePreviews();
     const fileName = window.location.hash.slice(2) || 'homepage';
     
