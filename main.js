@@ -119,7 +119,7 @@ function removePreviews()
 
 async function popupPreview(evt)
 {
-    await sleep(400);
+    await sleep(300);
 
     if (!evt.target.mouseIn)
     {
@@ -152,7 +152,7 @@ async function popupPreview(evt)
     previewContainer.addEventListener("mouseleave", async (evt) => {
         previewContainer.mouseIn = false;
 
-        await sleep(400);
+        await sleep(300);
 
         const currentPreview = evt.target;
 
@@ -211,7 +211,7 @@ function addEventOnPageLinks(pageContainer)
         e.addEventListener("mouseleave", async (evt) => {
             evt.target.mouseIn = false;
 
-            await sleep(400);
+            await sleep(300);
 
             const allPreviews = pageContent.querySelectorAll(".page-preview");
             const previewArray = [...allPreviews];
