@@ -1,0 +1,116 @@
+/* GENERAL */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Sans-serif;
+    overflow: hidden;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+#page-content {
+    display: flex;
+    justify-content: center;
+}
+
+/* PAGE CONTAINER STYLING */
+.page-container {
+    word-break: break-word;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.page-container h1 {
+    text-align: center;
+}
+
+/* LEFT COLUMN */
+#page-content-left-column {
+    display: flex;
+    flex-flow: column;
+    width: 250px;
+    flex: 0 0 250px;
+    background-color: red;
+    height: 100vh;
+}
+
+.page-name-container {
+    height: 100%;
+    overflow: hidden;
+}
+
+.page-name-container:hover {
+    overflow: auto;
+}
+
+.search-result-container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: purple;
+    max-width: 200px;
+    max-height: 200px;
+    overflow: auto;
+}
+
+/* CENTER COLUMN */
+#page-content-center-column {
+    flex: 0 1 740px;
+    background-color: green;
+    height: 100vh;
+}
+
+/* RIGHT COLUMN */
+#page-content-right-column {
+    width: 300px;
+    flex: 0 0 300px;
+    background-color: silver;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#page-content-right-column:hover {
+    overflow: auto;
+}
+
+.toc-item-h1 {
+    font-weight: bold;
+}
+
+/* MEDIA */
+@media screen and (max-width: 1024px) {
+    #page-content-right-column {
+        display: none !important;
+    }
+}
+
+@media screen and (max-width: 740px) {
+    #page-content-left-column {
+        display: none !important;
+    }
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background: black;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: grey;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}

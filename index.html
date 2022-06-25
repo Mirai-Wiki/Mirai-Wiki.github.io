@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page template</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="page-content">
+        <div id="page-content-left-column">
+            <div class="search-bar-container">
+                <input class="search-bar" type="text" placeholder="Chercher une page...">
+            </div>
+
+            <nav class="page-name-container">
+                <ol>
+                </ol>
+            </nav>
+
+            <div class="search-result-container" hidden>
+            </div>
+        </div>
+
+        <div id="page-content-center-column" class="page-container">
+        </div>
+
+        <div id="page-content-right-column">
+            <div class="toc-title">
+                <h1>Table Of Content</h1>
+            </div>
+
+            <nav class="toc-container">
+                <ul>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="eventEmitter.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+</body>
+</html>
