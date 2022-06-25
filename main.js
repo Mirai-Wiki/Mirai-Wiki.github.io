@@ -84,6 +84,9 @@ searchBar.addEventListener("input", () => {
     }
 });
 
+// Mouse
+const mouse = new Mouse();
+
 // Preview
 const sleep = ms => new Promise(res => setTimeout(res, ms));
 const eventEmitter = new EventEmitter();
@@ -116,6 +119,13 @@ function removePreviews()
 
 async function popupPreview(evt)
 {
+    await sleep(400);
+
+    if (!evt.target.mouseIn)
+    {
+        return false;
+    }
+
     const link = evt.target;
     const linkBox = link.getBoundingClientRect();
     const previewContainer = document.createElement("div");
@@ -124,7 +134,7 @@ async function popupPreview(evt)
     previewContainer.style = `
         position: absolute;
         top: ${linkBox.bottom}px;
-        left: ${evt.clientX - 10}px;
+        left: ${mouse.x - 10}px;
         width: 400px;
         height: 500px;
         background-color: white;
@@ -132,8 +142,25 @@ async function popupPreview(evt)
 
     pageContent.appendChild(previewContainer);
 
-    previewContainer.addEventListener("mouseleave", (evt) => {
+    previewContainer.mouseIn = false;
+    previewContainer.addEventListener("mousemove", (evt) => {
+        previewContainer.mouseIn = true;
+        mouse.x = evt.clientX;
+        mouse.y = evt.clientY;
+    });
+
+    previewContainer.addEventListener("mouseleave", async (evt) => {
+        previewContainer.mouseIn = false;
+
+        await sleep(400);
+
         const currentPreview = evt.target;
+
+        if (currentPreview.mouseIn)
+        {
+            return false;
+        }
+
         const previewBox = currentPreview.getBoundingClientRect();
 
         if (evt.clientX >= previewBox.x && evt.clientX < previewBox.x + previewBox.width
@@ -151,8 +178,8 @@ async function popupPreview(evt)
             const fallbackPreview = previewArray[previewArray.length - 1];
             const fallbackPreviewBox = fallbackPreview.getBoundingClientRect();
 
-            if (evt.clientX >= fallbackPreviewBox.x && evt.clientX < fallbackPreviewBox.x + fallbackPreviewBox.width
-                && evt.clientY >= fallbackPreviewBox.y && evt.clientY < fallbackPreviewBox.y + fallbackPreviewBox.height)
+            if (mouse.x >= fallbackPreviewBox.x && mouse.x < fallbackPreviewBox.x + fallbackPreviewBox.width
+                && mouse.y >= fallbackPreviewBox.y && mouse.y < fallbackPreviewBox.y + fallbackPreviewBox.height)
             {
             }
             else
@@ -171,12 +198,31 @@ function addEventOnPageLinks(pageContainer)
 {
     const allArticleLinks = pageContainer.querySelectorAll(".page-link");
     [...allArticleLinks].map((e) => {
+        e.mouseIn = false;
+
+        e.addEventListener("mousemove", (evt) => {
+            evt.target.mouseIn = true;
+            mouse.x = evt.clientX;
+            mouse.y = evt.clientY;
+        });
+
         e.addEventListener("mouseover", popupPreview);
-        e.addEventListener("mouseleave", (evt) => {
+
+        e.addEventListener("mouseleave", async (evt) => {
+            evt.target.mouseIn = false;
+
+            await sleep(400);
+
             const allPreviews = pageContent.querySelectorAll(".page-preview");
             const previewArray = [...allPreviews];
 
             const currentPreview = previewArray[previewArray.length - 1];
+
+            if (evt.target.mouseIn || currentPreview.mouseIn)
+            {
+                return false;
+            }
+
             const previewBox = currentPreview.getBoundingClientRect();
 
             if (evt.clientX >= previewBox.x && evt.clientX < previewBox.x + previewBox.width

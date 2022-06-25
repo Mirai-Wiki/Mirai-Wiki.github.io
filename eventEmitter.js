@@ -1,7 +1,6 @@
 class EventEmitter {
     constructor()
     {
-        console.log("constructor");
         this._events = {};
     }
 
