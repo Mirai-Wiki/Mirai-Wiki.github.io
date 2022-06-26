@@ -67,6 +67,7 @@ svg {
     width: 100%;
     align-items: center;
     white-space: nowrap;
+    margin-top: 1rem;
 }
 
 .menu-title-container svg {
@@ -81,12 +82,14 @@ svg {
     transform: rotate(-180deg);
 }
 
-#page-content-left-column:hover .search-bar-container {
-    display: flex;
+.search-bar-container {
     align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-.search-bar-container *{
+#page-content-left-column:hover .search-bar-container {
+    display: flex;
 }
 
 .page-name-container {
@@ -96,6 +99,27 @@ svg {
 
 .page-name-container:hover {
     overflow: auto;
+}
+
+.settings-container {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    white-space: nowrap;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.settings-container svg {
+    height: 2rem;
+    display: block;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: transform 500ms ease;
+}
+
+#page-content-left-column:hover .settings-container svg {
+    transform: rotate(-180deg);
 }
 
 .search-result-container {
