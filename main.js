@@ -163,7 +163,7 @@ async function popupPreview(evt)
         left: ${mouse.x - 10}px;
         width: 400px;
         height: 500px;
-        background-color: white;
+        background-color: silver;
     `;
 
     pageContent.appendChild(previewContainer);

@@ -7,6 +7,7 @@
 body {
     font-family: Sans-serif;
     overflow: hidden;
+    background: linear-gradient(90deg, grey 50%, dimgrey 50%);
 }
 
 ol, ul {
@@ -42,32 +43,50 @@ svg {
     left: 0;
     flex-direction: column;
     width: 100px;
-    background-color: red;
+    background-color: grey;
     height: 100vh;
     max-height: -webkit-fill-available;
     transition: width 300ms ease;
+    border-right: 1px solid orange;
 }
 
 #page-content-left-column:hover {
     width: 250px;
 }
 
-#page-content-left-column *{
-    visibility: hidden;
+#page-content-left-column .hideable{
+    display: none;
 }
 
-#page-content-left-column:hover *{
-    visibility: visible;
+#page-content-left-column:hover .hideable{
+    display: block;
 }
 
 .menu-title-container {
     display: flex;
+    width: 100%;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.menu-title-container svg {
+    height: 2rem;
+    display: block;
+    margin: auto;
+    transform: rotate(0deg);
+    transition: transform 500ms ease;
+}
+
+#page-content-left-column:hover .menu-title-container svg {
+    transform: rotate(-180deg);
+}
+
+#page-content-left-column:hover .search-bar-container {
+    display: flex;
     align-items: center;
 }
 
-.search-bar-container {
-    display: flex;
-    align-items: center;
+.search-bar-container *{
 }
 
 .page-name-container {
@@ -92,7 +111,7 @@ svg {
 /* CENTER COLUMN */
 #page-content-center-column {
     flex: 0 1 740px;
-    background-color: green;
+    background-color: dimgrey;
     height: 100vh;
     max-height: -webkit-fill-available;
     margin-left: 100px;
@@ -101,7 +120,7 @@ svg {
 /* RIGHT COLUMN */
 #page-content-right-column {
     min-width: 300px;
-    background-color: silver;
+    background-color: dimgrey;
     height: 100vh;
     max-height: -webkit-fill-available;
     overflow: hidden;
@@ -135,13 +154,13 @@ svg {
 }
 
 ::-webkit-scrollbar-track {
-    border-radius: 10px;
+    border-radius: 20px;
     background: black;
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    background: grey;
+    border-radius: 20px;
+    background: orange;
 }
 
 ::-webkit-scrollbar-corner {
