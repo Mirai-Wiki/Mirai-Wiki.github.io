@@ -10,6 +10,8 @@ const searchBar = document.querySelector(".search-bar");
 const searchResult = document.querySelector(".search-result-container");
 const tocList = document.querySelector(".toc-container");
 
+const isMobile = window.matchMedia("(any-hover: none)").matches;
+
 // Manage scrolling
 article.addEventListener("scroll", (evt) => {
     window.sessionStorage.setItem(ARTICLE_KEY, evt.target.scrollTop);
@@ -288,7 +290,12 @@ window.addEventListener("load", async () => {
     const fileName = window.location.hash.slice(2) || 'homepage';
     
     await loadPageHTML(article, fileName);
-    addEventOnPageLinks(article);
+
+    if (!isMobile)
+    {
+        addEventOnPageLinks(article);
+    }
+
     updateTOC();
 });
 window.addEventListener("hashchange", async () => {
@@ -297,13 +304,12 @@ window.addEventListener("hashchange", async () => {
     const fileName = window.location.hash.slice(2) || 'homepage';
     
     await loadPageHTML(article, fileName);
-    addEventOnPageLinks(article);
+
+    if (!isMobile)
+    {
+        addEventOnPageLinks(article);
+    }
+
     updateTOC();
 });
 
-// Media detecting
-if (window.matchMedia("(any-hover: none)").matches)
-{
-    console.log("no preview");
-    article.style.backgroundColor = "yellow";
-}
