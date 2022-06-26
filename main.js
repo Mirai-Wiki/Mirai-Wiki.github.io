@@ -117,9 +117,9 @@ function removePreviews()
     });
 }
 
-function disablePagePreviews(pageContainer)
+function destroyPreviews()
 {
-    const allArticleLinks = pageContainer.querySelectorAll(".page-link");
+    const allArticleLinks = pageContent.querySelectorAll(".page-link");
     [...allArticleLinks].map((e) => {
         e.parentNode.removeChild(e);
         e.mouseIn = false;
@@ -128,10 +128,18 @@ function disablePagePreviews(pageContainer)
 
 async function popupPreview(evt)
 {
+    if (evt.target.previewPending)
+    {
+        return false;
+    }
+
+    evt.target.previewPending = true;
+
     await sleep(300);
 
     if (!evt.target.mouseIn)
     {
+        evt.target.previewPending = false;
         return false;
     }
 
@@ -182,7 +190,10 @@ async function popupPreview(evt)
             const allPreviews = pageContent.querySelectorAll(".page-preview");
             const previewArray = [...allPreviews];
 
-            if (previewArray.length === 0) { return; }
+            if (previewArray.length === 0)
+            {
+                return false;
+            }
 
             const fallbackPreview = previewArray[previewArray.length - 1];
             const fallbackPreviewBox = fallbackPreview.getBoundingClientRect();
@@ -201,6 +212,8 @@ async function popupPreview(evt)
     const fileName = link.hash.slice(2);
     await loadPageHTML(previewContainer, fileName);
     addEventOnPageLinks(previewContainer);
+    
+    evt.target.previewPending = false;
 }
 
 function addEventOnPageLinks(pageContainer)
@@ -208,6 +221,7 @@ function addEventOnPageLinks(pageContainer)
     const allArticleLinks = pageContainer.querySelectorAll(".page-link");
     [...allArticleLinks].map((e) => {
         e.mouseIn = false;
+        e.previewPending = false;
 
         e.addEventListener("mousemove", (evt) => {
             evt.target.mouseIn = true;
@@ -224,6 +238,11 @@ function addEventOnPageLinks(pageContainer)
 
             const allPreviews = pageContent.querySelectorAll(".page-preview");
             const previewArray = [...allPreviews];
+
+            if (previewArray.length === 0)
+            {
+                return false;
+            }
 
             const currentPreview = previewArray[previewArray.length - 1];
 
@@ -253,7 +272,6 @@ function updateTOC()
     tocList.querySelector("ul").innerHTML = '';
 
     const allTitles = article.querySelectorAll("h1, h2, h3, h4, h5, h6");
-    console.log(allTitles);
     [...allTitles].map((e) => {
         const item = document.createElement("li");
         item.classList.add("toc-item-" + e.localName.toLowerCase());
@@ -265,7 +283,7 @@ function updateTOC()
 
 // Rooter
 window.addEventListener("load", async () => {
-    disablePagePreviews(article);
+    destroyPreviews();
     removePreviews();
     const fileName = window.location.hash.slice(2) || 'homepage';
     
@@ -274,7 +292,7 @@ window.addEventListener("load", async () => {
     updateTOC();
 });
 window.addEventListener("hashchange", async () => {
-    disablePagePreviews(article);
+    destroyPreviews();
     removePreviews();
     const fileName = window.location.hash.slice(2) || 'homepage';
     
@@ -282,3 +300,10 @@ window.addEventListener("hashchange", async () => {
     addEventOnPageLinks(article);
     updateTOC();
 });
+
+// Media detecting
+if (window.matchMedia("(any-hover: none)").matches)
+{
+    console.log("no preview");
+    article.style.backgroundColor = "yellow";
+}
