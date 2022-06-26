@@ -4,6 +4,7 @@ const ARTICLE_KEY = "article-scroll-y";
 const MENU_KEY = "menu-scroll-y";
 
 const pageContent = document.querySelector("#page-content");
+const leftCol = document.querySelector("#page-content-left-column");
 const article = document.querySelector("#page-content-center-column");
 const menu = document.querySelector(".page-name-container");
 const searchBar = document.querySelector(".search-bar");
@@ -11,6 +12,12 @@ const searchResult = document.querySelector(".search-result-container");
 const tocList = document.querySelector(".toc-container");
 
 const isMobile = window.matchMedia("(any-hover: none)").matches;
+
+// Position menu
+leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
+window.addEventListener("resize", () => {
+    leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
+});
 
 // Manage scrolling
 article.addEventListener("scroll", (evt) => {

@@ -13,8 +13,13 @@ ol, ul {
     list-style: none;
 }
 
+svg {
+    height: 1rem;
+}
+
 #page-content {
     display: flex;
+    position: relative;
     justify-content: center;
 }
 
@@ -32,12 +37,37 @@ ol, ul {
 /* LEFT COLUMN */
 #page-content-left-column {
     display: flex;
-    flex-flow: column;
-    width: 250px;
-    flex: 0 0 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    flex-direction: column;
+    width: 100px;
     background-color: red;
     height: 100vh;
     max-height: -webkit-fill-available;
+    transition: width 300ms ease;
+}
+
+#page-content-left-column:hover {
+    width: 250px;
+}
+
+#page-content-left-column *{
+    visibility: hidden;
+}
+
+#page-content-left-column:hover *{
+    visibility: visible;
+}
+
+.menu-title-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar-container {
+    display: flex;
+    align-items: center;
 }
 
 .page-name-container {
@@ -65,12 +95,12 @@ ol, ul {
     background-color: green;
     height: 100vh;
     max-height: -webkit-fill-available;
+    margin-left: 100px;
 }
 
 /* RIGHT COLUMN */
 #page-content-right-column {
-    width: 300px;
-    flex: 0 0 300px;
+    min-width: 300px;
     background-color: silver;
     height: 100vh;
     max-height: -webkit-fill-available;
