@@ -37,6 +37,7 @@ ol, ul {
     flex: 0 0 250px;
     background-color: red;
     height: 100vh;
+    max-height: -webkit-fill-available;
 }
 
 .page-name-container {
@@ -63,6 +64,7 @@ ol, ul {
     flex: 0 1 740px;
     background-color: green;
     height: 100vh;
+    max-height: -webkit-fill-available;
 }
 
 /* RIGHT COLUMN */
@@ -71,6 +73,7 @@ ol, ul {
     flex: 0 0 300px;
     background-color: silver;
     height: 100vh;
+    max-height: -webkit-fill-available;
     overflow: hidden;
 }
 
