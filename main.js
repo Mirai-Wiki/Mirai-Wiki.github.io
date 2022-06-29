@@ -353,3 +353,7 @@ if ("serviceWorker" in navigator)
             .catch((err) => console.log("serviceWorker not ok"));
     });
 }
+
+window.addEventListener("touchend", () => {
+    window.scrollTo(0,0)
+});
