@@ -40,15 +40,15 @@ ol, ul {
 
 /* LEFT COLUMN */
 #page-content-left-column {
+    display: flex;
     min-width: 4rem;
     height: 100vh;
     max-height: -webkit-fill-available;
     background-color: grey;
-    transition: width 300ms ease;
-    border-right: 1px solid orange;
 }
 
 .navbar {
+    width: 4rem;
     height: 100%;
 }
 
@@ -57,14 +57,15 @@ ol, ul {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-right: 1px solid orange;
 }
 
 .navbar-list-item {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 4rem;
-    min-width: 100%;
+    height: 4rem;
+    width: 4rem;
     cursor: pointer;
     border: 1px solid black;
 }
@@ -82,10 +83,18 @@ ol, ul {
     height: 1.5rem;
 }
 
+.extend-menu {
+    display: block;
+    width: 0px;
+    transition: 300ms ease;
+    word-break: break-word;
+    overflow-y: auto;
+}
+
 /* CENTER COLUMN */
 #page-content-center-column {
     background-color: dimgrey;
-    width: 100%;
+    flex: 1 1;
     height: 100vh;
     max-height: -webkit-fill-available;
 }
@@ -94,12 +103,6 @@ ol, ul {
     width: 100%;
     max-width: 740px;
     margin: 0 auto;
-}
-
-main {
-    width: 740px;
-    height: 100%;
-    margin-right: auto;
 }
 
 /* RIGHT COLUMN */

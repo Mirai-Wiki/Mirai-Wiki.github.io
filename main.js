@@ -6,6 +6,7 @@ const pageContent = document.querySelector("#page-content");
 const leftCol = document.querySelector("#page-content-left-column");
 const article = document.querySelector("#page-content-center-column");
 const tocList = document.querySelector(".toc-container");
+const navbar = document.querySelector(".navbar-list");
 
 const isMobile = window.matchMedia("(any-hover: none)").matches;
 
@@ -27,18 +28,18 @@ window.addEventListener("load", () => {
 });
 
 // Load menu (json)
-//window.addEventListener("load", async () => {
-    //const res = await fetch("data.json");
-    //const states = await res.json();
+window.addEventListener("load", async () => {
+    const res = await fetch("data.json");
+    const states = await res.json();
 
-    //states.forEach((value) => {
-        //const element = document.createElement("li");
-        //element.classList.add("page-name-item");
-        //element.innerHTML = value.name.french;
+    states.forEach((value) => {
+        const element = document.createElement("li");
+        element.classList.add("page-name-item");
+        element.innerHTML = value.name.french;
 
-        //menu.querySelector("ol").appendChild(element);
-    //});
-//});
+        leftCol.querySelector("#extend-pages ol").appendChild(element);
+    });
+});
 
 // Searching
 //window.addEventListener("click", () => {
@@ -280,6 +281,29 @@ function updateTOC()
     });
 }
 
+// Navbar events
+window.addEventListener("load", () => {
+    navbar.querySelector("#nav-homepage").addEventListener("click", () => {
+        window.location.href = "#/homepage";
+    });
+
+    navbar.querySelector("#nav-pages").addEventListener("click", () => {
+        const extend = leftCol.querySelector("#extend-pages");
+        if (extend.clientWidth <= 0)
+        {
+            extend.style = `
+                width: 13rem;
+            `;
+        }
+        else
+        {
+            extend.style = `
+                width: 0px;
+            `;
+        }
+    });
+});
+
 // Rooter
 window.addEventListener("load", async () => {
     destroyPreviews();
@@ -295,6 +319,7 @@ window.addEventListener("load", async () => {
 
     updateTOC();
 });
+
 window.addEventListener("hashchange", async () => {
     destroyPreviews();
     removePreviews();
