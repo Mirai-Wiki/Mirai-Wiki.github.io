@@ -10,6 +10,7 @@ body {
     background-color: dimgrey;
     overscroll-behavior-y: contain;
     touch-action: none;
+    overflow-y: hidden;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
 }
