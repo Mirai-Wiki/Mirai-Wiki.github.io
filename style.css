@@ -8,6 +8,7 @@ body {
     font-family: Sans-serif;
     overflow: hidden;
     background-color: dimgrey;
+    overscroll-behavior-y: contain;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
 }
