@@ -9,6 +9,8 @@ body {
     overflow: hidden;
     background-color: dimgrey;
     overscroll-behavior-y: contain;
+    position: fixed;
+    width: 100%;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
 }
