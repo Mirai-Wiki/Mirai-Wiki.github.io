@@ -1,19 +1,15 @@
 window.history.scrollRestoration = "manual";
 
 const ARTICLE_KEY = "article-scroll-y";
-const MENU_KEY = "menu-scroll-y";
 
 const pageContent = document.querySelector("#page-content");
 const leftCol = document.querySelector("#page-content-left-column");
 const article = document.querySelector("#page-content-center-column");
-const menu = document.querySelector(".page-name-container");
-const searchBar = document.querySelector(".search-bar");
-const searchResult = document.querySelector(".search-result-container");
 const tocList = document.querySelector(".toc-container");
 
 const isMobile = window.matchMedia("(any-hover: none)").matches;
 
-// Position menu
+// Position left column 
 leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
 window.addEventListener("resize", () => {
     leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
@@ -24,74 +20,68 @@ article.addEventListener("scroll", (evt) => {
     window.sessionStorage.setItem(ARTICLE_KEY, evt.target.scrollTop);
 });
 
-menu.addEventListener("scroll", (evt) => {
-    window.sessionStorage.setItem(MENU_KEY, evt.target.scrollTop);
-});
-
 window.addEventListener("load", () => {
     const articleScrollY = sessionStorage.getItem(ARTICLE_KEY) || 0;
-    const menuScrollY = sessionStorage.getItem(MENU_KEY) || 0;
 
     article.scrollTo(0, articleScrollY);
-    menu.scrollTo(0, menuScrollY);
 });
 
 // Load menu (json)
-window.addEventListener("load", async () => {
-    const res = await fetch("data.json");
-    const states = await res.json();
+//window.addEventListener("load", async () => {
+    //const res = await fetch("data.json");
+    //const states = await res.json();
 
-    states.forEach((value) => {
-        const element = document.createElement("li");
-        element.classList.add("page-name-item");
-        element.innerHTML = value.name.french;
+    //states.forEach((value) => {
+        //const element = document.createElement("li");
+        //element.classList.add("page-name-item");
+        //element.innerHTML = value.name.french;
 
-        menu.querySelector("ol").appendChild(element);
-    });
-});
+        //menu.querySelector("ol").appendChild(element);
+    //});
+//});
 
 // Searching
-window.addEventListener("click", () => {
-    searchResult.hidden = true;
-});
+//window.addEventListener("click", () => {
+    //searchResult.hidden = true;
+//});
 
-searchBar.addEventListener("input", () => {
-    const allPages = menu.querySelectorAll(".page-name-item");
-    const lstPages = [...allPages].map(e=>e.innerHTML);
+//searchBar.addEventListener("input", () => {
+    //const allPages = menu.querySelectorAll(".page-name-item");
+    //const lstPages = [...allPages].map(e=>e.innerHTML);
 
-    if (searchBar.value.length > 0)
-    {
-        searchResult.hidden = false;
-        const rect = searchBar.getBoundingClientRect();
-        const posX = rect.x + 20;
-        const posY = rect.y + 20;
-        searchResult.style.left = `${posX}px`;
-        searchResult.style.top = `${posY}px`;
+    //if (searchBar.value.length > 0)
+    //{
+        //searchResult.hidden = false;
+        //const rect = searchBar.getBoundingClientRect();
+        //const posX = rect.x + 20;
+        //const posY = rect.y + 20;
+        //searchResult.style.left = `${posX}px`;
+        //searchResult.style.top = `${posY}px`;
 
-        let matches = lstPages.filter((state) => {
-            const regex = new RegExp(searchBar.value, "gi");
-            return state.match(regex);
-        });
+        //let matches = lstPages.filter((state) => {
+            //const regex = new RegExp(searchBar.value, "gi");
+            //return state.match(regex);
+        //});
 
-        if (matches.length > 0)
-        {
-            const html = matches.map(match => `
-                <p><a href=${match}.html>${match}</a></p>
-            `).join('');
+        //if (matches.length > 0)
+        //{
+            //const html = matches.map(match => `
+                //<p><a href=${match}.html>${match}</a></p>
+            //`).join('');
 
-            searchResult.innerHTML = html;
-        }
-        else
-        {
-            searchResult.innerHTML = "<p>No result...</p>";
-        }
-    }
-    else
-    {
-        searchResult.hidden = true;
-        searchResult.innerHTML = '';
-    }
-});
+            //searchResult.innerHTML = html;
+        //}
+        //else
+        //{
+            //searchResult.innerHTML = "<p>No result...</p>";
+        //}
+    //}
+    //else
+    //{
+        //searchResult.hidden = true;
+        //searchResult.innerHTML = '';
+    //}
+//});
 
 // Mouse
 const mouse = new Mouse();
