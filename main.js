@@ -306,8 +306,12 @@ window.addEventListener("load", () => {
 
 // Rooter
 window.addEventListener("load", async () => {
-    destroyPreviews();
-    removePreviews();
+    if (!isMobile)
+    {
+        destroyPreviews();
+        removePreviews();
+    }
+
     const fileName = window.location.hash.slice(2) || 'homepage';
     
     await loadPageHTML(article, fileName);
@@ -321,8 +325,12 @@ window.addEventListener("load", async () => {
 });
 
 window.addEventListener("hashchange", async () => {
-    destroyPreviews();
-    removePreviews();
+    if (!isMobile)
+    {
+        destroyPreviews();
+        removePreviews();
+    }
+
     const fileName = window.location.hash.slice(2) || 'homepage';
     
     await loadPageHTML(article, fileName);
