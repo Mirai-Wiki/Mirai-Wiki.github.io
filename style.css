@@ -148,7 +148,10 @@ ol, ul {
     }
 
     .navbar {
-        display: flex;
+        width: 100%;
+    }
+
+    .navbar-list {
         flex-direction: row;
     }
 }
