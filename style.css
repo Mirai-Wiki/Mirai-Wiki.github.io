@@ -154,6 +154,10 @@ ol, ul {
     .navbar-list {
         flex-direction: row;
     }
+
+    #page-content-center-column {
+        height: calc(100vh - 4rem);
+    }
 }
 
 /* SCROLLBAR */
