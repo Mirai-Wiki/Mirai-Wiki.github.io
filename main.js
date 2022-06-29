@@ -354,6 +354,7 @@ if ("serviceWorker" in navigator)
     });
 }
 
+// PWA mobile scroll fix
 window.addEventListener("touchend", () => {
     window.scrollTo(0,0)
 });

@@ -133,8 +133,23 @@ ol, ul {
 }
 
 @media screen and (max-width: 740px) {
+    #page-content {
+        display: block;
+    }
+
     #page-content-left-column {
-        display: none !important;
+        display: flex;
+        flex-direction: row;
+        position: static;
+        top: 0px;
+        left: 0px;
+        min-width: 100vw;
+        height: 4rem;
+    }
+
+    .navbar {
+        display: flex;
+        flex-direction: row;
     }
 }
 
