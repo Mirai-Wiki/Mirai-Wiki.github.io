@@ -11,6 +11,7 @@ body {
     overscroll-behavior-y: contain;
     position: fixed;
     width: 100%;
+    max-height: -webkit-fill-available;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
 }
@@ -136,11 +137,11 @@ ol, ul {
     #page-content {
         display: flex;
         flex-direction: column;
+        height: 100vh;
+        max-height: -webkit-fill-available;
     }
 
     #page-content-left-column {
-        display: flex;
-        flex-direction: row;
         position: static;
         top: 0px;
         left: 0px;
@@ -157,8 +158,6 @@ ol, ul {
     }
 
     #page-content-center-column {
-        flex: 1 1 calc(100vh - 4rem);
-        max-height: -webkit-fit-content;
     }
 }
 
