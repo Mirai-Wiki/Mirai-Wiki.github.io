@@ -353,8 +353,3 @@ if ("serviceWorker" in navigator)
             .catch((err) => console.log("serviceWorker not ok"));
     });
 }
-
-window.addEventListener("scroll", (evt) => {
-    e.preventDefault();
-    window.scrollTo(0, 0);
-});
