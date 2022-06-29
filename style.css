@@ -134,7 +134,8 @@ ol, ul {
 
 @media screen and (max-width: 740px) {
     #page-content {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 
     #page-content-left-column {
@@ -156,7 +157,8 @@ ol, ul {
     }
 
     #page-content-center-column {
-        max-height: calc(100vh - 4rem);
+        flex: 1 1 calc(100vh - 4rem);
+        max-height: -webkit-fit-content;
     }
 }
 
