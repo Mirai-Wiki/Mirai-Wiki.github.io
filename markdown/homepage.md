@@ -15,11 +15,11 @@ Il est probable qu'une application officielle émerge prochainement sur le *Goog
 
 ## TODO-List
 - [ ] Implémenter les fonctionnalités du menu déroulant (afficher les pages + pages cliquables)
-- [ ] Modifier le menu pour les appareils mobiles (le rendre plus ergonimique)
+- [ ] Modifier le menu pour les appareils mobiles (le rendre plus ergonomique)
 - [ ] Implémenter le mode clair/sombre (bouton du menu)
 - [ ] Rendre fonctionnel le bouton des paramètres
 	- [ ] => Choisir un thème
-	- [ ] => Gestion des paramètres du compte (pas encore implémenter)
+	- [ ] => Gestion des paramètres du compte (pas encore implémenté)
 
 ## Pages en vrac
 - [modèles atomiques](chimie/modèles%20atomiques.md)
