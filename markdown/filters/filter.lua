@@ -1,5 +1,7 @@
 function Link(el)
     el.target = "#/pages/" .. el.target
+    el.target = el.target:match("(.+)%..+$")
+
     el.attributes.class = "page-link"
     return el
 end

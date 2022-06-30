@@ -1,2 +1,2 @@
 # Couches électroniques
-[test](test)
+[test](chimie/test.md)
