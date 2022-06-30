@@ -20,3 +20,7 @@ watchexec -w markdown/Excalidraw --exts png '
 find ./markdown -name "$WATCHEXEC_WRITTEN_PATH" | 
 xargs -I {} ln {} ./images
 '
+
+## for json
+#echo '$meta-json$' > /tmp/metadata.pandoc-tpl
+#pandoc test.md --template=/tmp/metadata.pandoc-tpl | jq

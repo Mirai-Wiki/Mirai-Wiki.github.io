@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "homepage.md",
+            "file": "chimie/couches électroniques.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "homepage.md",
+                "file": "chimie/couches électroniques.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,10 +89,12 @@
   },
   "active": "5b9f2123f0e1ad94",
   "lastOpenFiles": [
-    "homepage.md",
     "chimie/couches électroniques.md",
-    "chimie/test.md",
     "chimie/modèles atomiques.md",
+    "chimie/test.md",
+    "homepage.md",
+    "chimie/test2.md",
+    "templates/page.md",
     "chimie/atome.md",
     "Excalidraw/brout.md",
     "Excalidraw/brout.png",

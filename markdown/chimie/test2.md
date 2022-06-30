@@ -1,7 +1,6 @@
 ---
-title: test
+title: test2
 date: 2022-07-01
 ---
 
-# Test
-c
+# test2
