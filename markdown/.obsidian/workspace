@@ -1,0 +1,97 @@
+{
+  "main": {
+    "id": "5c4ac7dc2016285e",
+    "type": "split",
+    "children": [
+      {
+        "id": "5b9f2123f0e1ad94",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "chimie/modèles atomiques.md",
+            "mode": "source",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "3c240f1d7c1b336b",
+    "type": "split",
+    "children": [
+      {
+        "id": "fdce56fedf1e3f5f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "584451daafcfe4d6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "6f084b2ba88c9cd5",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "90863dd08fd49c23",
+    "type": "split",
+    "children": [
+      {
+        "id": "0ec8d1fff21619de",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c142385ff6658559",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "chimie/modèles atomiques.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "5b9f2123f0e1ad94",
+  "lastOpenFiles": [
+    "chimie/modèles atomiques.md",
+    "chimie/couches électroniques.md",
+    "Excalidraw/modele-dalton.md",
+    "accueil.md"
+  ]
+}
