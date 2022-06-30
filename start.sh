@@ -1,19 +1,22 @@
 #!/bin/sh
 
-#ln ./images/*.png ./markdown/Excalidraw
+ln ./images/*.png ./markdown/Excalidraw
 
-#live-server&
+live-server&
 
 watchexec -w markdown --exts md '
 find ./markdown -name "$WATCHEXEC_WRITTEN_PATH" | 
 xargs -I {} echo {} | rev | cut -f 2- -d '.' | rev |
-xargs -I {} echo $(cut -d '/' -f3- "./tysire/tysrnei/istyrn.mr" | rev | cut -f 2- -d '.' | rev)
+cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev |
+xargs -I {} pandoc ./markdown/{}.md -o ./pages/{}.html --lua-filter ./markdown/filters/filter.lua
 '
-#xargs -I {} pandoc {}.md -o ./pages/"$(cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev)".html --lua-filter ./markdown/filters/filter.lua
 
-#cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev
+#0. $WATCHEXEC_WRITTEN_PATH = file.ext
+#1. find... = ./full/path/file.ext
+#2. ./full/path/file
+#3. path/file = ex: chimie/test
 
-#watchexec -w markdown/Excalidraw --exts png '
-#find ./markdown -name "$WATCHEXEC_WRITTEN_PATH" | 
-#xargs -I {} ln {} ./images
-#'
+watchexec -w markdown/Excalidraw --exts png '
+find ./markdown -name "$WATCHEXEC_WRITTEN_PATH" | 
+xargs -I {} ln {} ./images
+'
