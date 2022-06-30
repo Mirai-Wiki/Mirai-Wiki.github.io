@@ -284,7 +284,7 @@ function updateTOC()
 // Navbar events
 window.addEventListener("load", () => {
     navbar.querySelector("#nav-homepage").addEventListener("click", () => {
-        window.location.href = "#/homepage";
+        window.location.href = "#/pages/homepage";
     });
 
     navbar.querySelector("#nav-pages").addEventListener("click", () => {
@@ -312,7 +312,7 @@ window.addEventListener("load", async () => {
         removePreviews();
     }
 
-    const fileName = window.location.hash.slice(2) || 'homepage';
+    const fileName = window.location.hash.slice(2) || 'pages/homepage';
     
     await loadPageHTML(article, fileName);
 
@@ -331,7 +331,7 @@ window.addEventListener("hashchange", async () => {
         removePreviews();
     }
 
-    const fileName = window.location.hash.slice(2) || 'homepage';
+    const fileName = window.location.hash.slice(2) || 'pages/homepage';
     
     await loadPageHTML(article, fileName);
 
