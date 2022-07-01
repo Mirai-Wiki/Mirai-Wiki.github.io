@@ -18,7 +18,7 @@ Pour l'instant, le projet n'est officiellement qu'un site internet et ne figure 
 Il est probable qu'une application officielle émerge prochainement sur le *Google Play Store* quand les fonctionnalités de base du projet seront implémentées.
 
 ## TODO-List
-- [x] Afficher les pages du menu (architecture dossier)
+- [x] ~~Afficher les pages du menu (architecture dossier)~~
 - [ ] Pages du menu cliquables
 - [ ] Modifier le menu pour les appareils mobiles (le rendre plus ergonomique)
 - [ ] Implémenter le mode clair/sombre (bouton du menu)
