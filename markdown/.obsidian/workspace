@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "caca.md",
+            "file": "a/a2/bic.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "caca.md",
+                "file": "a/a2/bic.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "5b9f2123f0e1ad94",
   "lastOpenFiles": [
+    "a/a2/bic.md",
     "caca.md",
     "b/zz.md",
     "a/aa.md",
@@ -97,7 +98,6 @@
     "homepage.md",
     "chimie/couches électroniques.md",
     "templates/page.md",
-    "chimie/test2.md",
-    "chimie/test.md"
+    "chimie/test2.md"
   ]
 }
