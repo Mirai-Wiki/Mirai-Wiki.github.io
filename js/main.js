@@ -10,6 +10,8 @@ const navbar = document.querySelector(".navbar-list");
 
 const isMobile = window.matchMedia("(any-hover: none)").matches;
 
+const createdNodes = [];
+
 // Position left column 
 leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
 window.addEventListener("resize", () => {
@@ -28,18 +30,47 @@ window.addEventListener("load", () => {
 });
 
 // Load menu (json)
+function doesNodeExist(nodeName)
+{
+    for (let i = 0; i < createdNodes.length; i++)
+    {
+        if (createdNodes[i] === nodeName)
+        {
+            return true;
+        }
+    }
+
+    return false;
+}
+
 window.addEventListener("load", async () => {
     const res = await fetch("/data/pages.json");
     const states = await res.json();
 
-    states.forEach((value) => {
-        const element = document.createElement("li");
-        element.classList.add("page-name-item");
-        element.innerHTML = value.title;
-        console.log(value);
+    const treePages = leftCol.querySelector("#extend-pages ol");
 
-        leftCol.querySelector("#extend-pages ol").appendChild(element);
+    states.forEach((value) => {
+        if (value.folder)
+        {
+            if (!doesNodeExist(value.folder))
+            {
+                const treeNode = document.createElement("li");
+                treeNode.classList.add("tree-node");
+                treeNode.id = value.folder;
+                treeNode.innerHTML = value.folder;
+                
+                treePages.appendChild(treeNode);
+                createdNodes.push(value.folder);
+            }
+
+            const treeItem = document.createElement("li");
+            treeItem.classList.add("tree-item");
+            treeItem.innerHTML = value.title;
+
+            treePages.querySelector("#" + value.folder).appendChild(treeItem);
+        }
     });
+    console.log(createdNodes);
 });
 
 // Searching
