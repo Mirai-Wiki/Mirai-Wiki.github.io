@@ -9,7 +9,13 @@ find ./markdown -name "*.md" -not -path "./markdown/Excalidraw/*" -not -path "./
 sort |
 while read file ;
 do
-    pandoc "$file" --template=/tmp/metadata.pandoc-tpl | jq >> ./data/temp.json
+    pandoc "$file" --template=/tmp/metadata.pandoc-tpl | 
+    sed 's/.$//' |
+    xargs -0 -I {} echo '{}',$(dirname "$file" |
+    cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev |
+    xargs -I {} echo '"folder":"{}"}') |
+    jq >> ./data/temp.json
+
     echo ',' >> ./data/temp.json
 done;
 head -n -1 ./data/temp.json > ./data/pages.json
