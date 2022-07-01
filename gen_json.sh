@@ -10,10 +10,12 @@ sort |
 while read file ;
 do
     pandoc "$file" --template=/tmp/metadata.pandoc-tpl | 
-    sed 's/.$//' |
-    xargs -0 -I {} echo '{}',$(dirname "$file" |
+    sed 's/.$//' | sed 's/"/\\"/g' |
+    xargs -I {} echo '{},'$(dirname "$file" |
     cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev |
-    xargs -I {} echo '"folder":"{}"}') |
+    xargs -I {} echo '"folder":"{}",') |
+    sed 's/.$//' |
+    xargs -0 -I {} echo {}'}' |
     jq >> ./data/temp.json
 
     echo ',' >> ./data/temp.json

@@ -36,6 +36,7 @@ window.addEventListener("load", async () => {
         const element = document.createElement("li");
         element.classList.add("page-name-item");
         element.innerHTML = value.title;
+        console.log(value);
 
         leftCol.querySelector("#extend-pages ol").appendChild(element);
     });
