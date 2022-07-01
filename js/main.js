@@ -63,11 +63,11 @@ window.addEventListener("load", async () => {
                 createdNodes.push(value.folder);
             }
 
-            const treeItem = document.createElement("li");
-            treeItem.classList.add("tree-item");
-            treeItem.innerHTML = value.title;
+            //const treeItem = document.createElement("li");
+            //treeItem.classList.add("tree-item");
+            //treeItem.innerHTML = value.title;
 
-            treePages.querySelector("#" + value.folder).appendChild(treeItem);
+            //treePages.querySelector("#" + value.folder).appendChild(treeItem);
         }
     });
     console.log(createdNodes);
