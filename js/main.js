@@ -43,6 +43,46 @@ function doesNodeExist(nodeName)
     return false;
 }
 
+function getFolderMaxDeep(treeNodes, absoluteFolderTokens, currentSearch=0)
+{
+    if (currentSearch < absoluteFolderTokens.length)
+    {
+        const folder = treeNodes.querySelector("." + absoluteFolderTokens[currentSearch]);
+        if (folder === null)
+        {
+            return treeNodes.querySelector("." + absoluteFolderTokens[currentSearch - 1]);
+        }
+
+        return getFolderMaxDeep(treeNodes, absoluteFolderTokens, currentSearch + 1);
+    }
+
+    return treeNodes.querySelector("." + absoluteFolderTokens[currentSearch - 1]);
+}
+
+function createFolderRecursive(treeNodes, absoluteFolderTokens, currentSearch=0)
+{
+    if (currentSearch < absoluteFolderTokens.length)
+    {
+        const folder = treeNodes.querySelector("." + absoluteFolderTokens[currentSearch]);
+        if (folder === null)
+        {
+            const treeNode = document.createElement("li");
+            treeNode.classList.add("tree-node");
+            treeNode.classList.add(absoluteFolderTokens[currentSearch]);
+            treeNode.innerHTML = absoluteFolderTokens[currentSearch];
+            
+            treeNodes.appendChild(treeNode);
+            createdNodes.push(absoluteFolderTokens.join('/'));
+
+            createFolderRecursive(treeNode, absoluteFolderTokens, currentSearch + 1);
+        }
+        else
+        {
+            createFolderRecursive(folder, absoluteFolderTokens, currentSearch + 1);
+        }
+    }
+}
+
 window.addEventListener("load", async () => {
     const res = await fetch("/data/pages.json");
     const states = await res.json();
@@ -52,25 +92,28 @@ window.addEventListener("load", async () => {
     states.forEach((value) => {
         if (value.folder)
         {
-            if (!doesNodeExist(value.folder))
-            {
-                const treeNode = document.createElement("li");
-                treeNode.classList.add("tree-node");
-                treeNode.id = value.folder;
-                treeNode.innerHTML = value.folder;
-                
-                treePages.appendChild(treeNode);
-                createdNodes.push(value.folder);
-            }
+            const tokens = value.folder.split('/');
+            const folder = tokens[tokens.length - 1];
+            const absoluteFolder = value.folder;
 
-            //const treeItem = document.createElement("li");
-            //treeItem.classList.add("tree-item");
-            //treeItem.innerHTML = value.title;
+            createFolderRecursive(treePages, tokens);
 
-            //treePages.querySelector("#" + value.folder).appendChild(treeItem);
+            const node = getFolderMaxDeep(treePages, tokens);
+            const treeItem = document.createElement("li");
+            treeItem.classList.add("tree-item");
+            treeItem.innerHTML = value.title;
+
+            node.appendChild(treeItem);
+        }
+        else
+        {
+            const treeItem = document.createElement("li");
+            treeItem.classList.add("tree-item");
+            treeItem.innerHTML = value.title;
+
+            treePages.appendChild(treeItem);
         }
     });
-    console.log(createdNodes);
 });
 
 // Searching
