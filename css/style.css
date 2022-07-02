@@ -1,5 +1,10 @@
 /* GENERAL */
 :root {
+    --menu-button-width: 4rem;
+    --icon-height: 1.6rem;
+
+    --menu-button-mobile-width: 3.2rem;
+    --icon-mobile-height: 1.3rem;
 }
 
 *:not(li):not(ol) {
@@ -50,14 +55,14 @@ ol, ul {
 /* LEFT COLUMN */
 #page-content-left-column {
     display: flex;
-    min-width: 4rem;
+    min-width: var(--menu-button-width);
     height: 100vh;
     max-height: -webkit-fill-available;
     background-color: grey;
 }
 
 .navbar {
-    width: 4rem;
+    width: var(--menu-button-width);
     height: 100%;
 }
 
@@ -73,8 +78,8 @@ ol, ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 4rem;
-    width: 4rem;
+    height: var(--menu-button-width);
+    width: var(--menu-button-width);
     cursor: pointer;
     border: 1px solid black;
 }
@@ -89,7 +94,7 @@ ol, ul {
 }
 
 .navbar-list-item svg {
-    height: 1.5rem;
+    height: var(--icon-height);
 }
 
 .extend-menu {
@@ -177,9 +182,9 @@ ol, ul {
 
     #page-content-left-column {
         display: grid;
-        flex: 0 0 4rem;
+        flex: 0 0 var(--menu-button-mobile-width);
         min-width: 100vw;
-        height: 4rem;
+        height: var(--menu-button-mobile-width);
     }
 
     .navbar {
@@ -189,6 +194,15 @@ ol, ul {
 
     .navbar-list {
         flex-direction: row;
+    }
+
+    .navbar-list-item {
+        width: var(--menu-button-mobile-width);
+        height: var(--menu-button-mobile-width);
+    }
+
+    .navbar-list-item svg {
+        height: var(--icon-mobile-height);
     }
 
     #page-content-center-column {
