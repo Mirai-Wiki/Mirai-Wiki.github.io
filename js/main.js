@@ -61,13 +61,11 @@ function getFolderMaxDeep(treeNodes, absoluteFolderTokens, currentSearch=0)
 
 function createFolderRecursive(treeNodes, absoluteFolderTokens, currentSearch=0)
 {
-    console.log("oc");
     if (currentSearch < absoluteFolderTokens.length)
     {
         const folder = treeNodes.querySelector("." + absoluteFolderTokens[currentSearch]);
         if (folder === null)
         {
-            console.log("sp");
             const treeNode = document.createElement("li");
             treeNode.classList.add("tree-node");
             treeNode.classList.add(absoluteFolderTokens[currentSearch]);
@@ -77,11 +75,10 @@ function createFolderRecursive(treeNodes, absoluteFolderTokens, currentSearch=0)
                 </ol>
             `;
 
-            console.log(treeNode);
             treeNodes.querySelector("ol").appendChild(treeNode);
             treeNode.querySelector(".caret").addEventListener("click", (evt) => {
-                console.log(evt.target);
                 evt.target.parentElement.querySelector(".nested").classList.toggle("active");
+                evt.target.classList.toggle("caret-down");
             });
 
             createdNodes.push(absoluteFolderTokens.join('/'));

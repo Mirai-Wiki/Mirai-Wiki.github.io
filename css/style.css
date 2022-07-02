@@ -99,6 +99,24 @@ ol, ul {
     color: yellow;
 }
 
+.caret {
+    cursor: pointer;
+    user-select: none;
+}
+
+.caret::before {
+    content: "\25B6";
+    colol: black;
+    display: inline-block;
+    margin-right: 0.2rem;
+    transform: rotate(0deg);
+    transition: 200ms ease;
+}
+
+.caret-down::before {
+    transform: rotate(90deg);
+}
+
 .nested {
     display: none;
 }
