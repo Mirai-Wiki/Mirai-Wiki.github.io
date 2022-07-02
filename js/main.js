@@ -69,9 +69,13 @@ function createFolderRecursive(treeNodes, absoluteFolderTokens, currentSearch=0)
             const treeNode = document.createElement("li");
             treeNode.classList.add("tree-node");
             treeNode.classList.add(absoluteFolderTokens[currentSearch]);
-            treeNode.innerHTML = absoluteFolderTokens[currentSearch];
-            
-            treeNodes.appendChild(treeNode);
+            treeNode.innerHTML = `
+                ${absoluteFolderTokens[currentSearch]}
+                <ol class="nested">
+                </ol>
+            `;
+
+            treeNodes.querySelector("ol").appendChild(treeNode);
             createdNodes.push(absoluteFolderTokens.join('/'));
 
             createFolderRecursive(treeNode, absoluteFolderTokens, currentSearch + 1);
@@ -87,7 +91,7 @@ window.addEventListener("load", async () => {
     const res = await fetch("/data/pages.json");
     const states = await res.json();
 
-    const treePages = leftCol.querySelector("#extend-pages ol");
+    const treePages = leftCol.querySelector("#extend-pages");
 
     states.forEach((value) => {
         if (value.folder)
@@ -103,7 +107,7 @@ window.addEventListener("load", async () => {
             treeItem.classList.add("tree-item");
             treeItem.innerHTML = value.title;
 
-            node.appendChild(treeItem);
+            node.querySelector("ol").appendChild(treeItem);
         }
         else
         {
@@ -111,7 +115,7 @@ window.addEventListener("load", async () => {
             treeItem.classList.add("tree-item");
             treeItem.innerHTML = value.title;
 
-            treePages.appendChild(treeItem);
+            treePages.querySelector("ol").appendChild(treeItem);
         }
     });
 });
