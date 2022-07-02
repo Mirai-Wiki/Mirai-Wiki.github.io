@@ -185,6 +185,7 @@ ol, ul {
         flex: 0 0 var(--menu-button-mobile-width);
         min-width: 100vw;
         height: var(--menu-button-mobile-width);
+        border-radius: 10px 10px 0 0;
     }
 
     .navbar {
@@ -195,6 +196,7 @@ ol, ul {
     .navbar-list {
         flex-direction: row;
         justify-content: center;
+        border-right: none;
     }
 
     .navbar-list-item {
