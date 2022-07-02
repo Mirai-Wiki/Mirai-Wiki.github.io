@@ -4,11 +4,11 @@ ln ./images/*.png ./markdown/Excalidraw
 
 live-server&
 
-watchexec -w markdown --exts md '
+watchexec -w ./markdown/pages/ --exts md '
 find ./markdown -name "$WATCHEXEC_WRITTEN_PATH" | 
 xargs -I {} echo {} | rev | cut -f 2- -d '.' | rev |
 cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev |
-xargs -I {} pandoc ./markdown/{}.md -o ./pages/{}.html --lua-filter ./markdown/filters/filter.lua
+xargs -I {} pandoc ./markdown/{}.md -o ./{}.html --lua-filter ./markdown/filters/filter.lua
 '
 
 #0. $WATCHEXEC_WRITTEN_PATH = file.ext

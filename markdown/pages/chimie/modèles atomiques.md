@@ -4,7 +4,7 @@ date: 2022-07-01
 ---
 
 # Modèles atomiques
-Un modèle atomiques est une représentation simplifiée des molécules qui composent les [atomes](chimie/atome.md). Avec le temps, ces modèles ont évolué en fonction de l'avancée scientifique.
+Un modèle atomiques est une représentation simplifiée des molécules qui composent les [atomes](pages/chimie/atome.md). Avec le temps, ces modèles ont évolué en fonction de l'avancée scientifique.
 
 ## Modèle de Dalton (1803)
 Les atomes sont indivisibles et constituent toutes substances. Ils sont représentés par des boules :
