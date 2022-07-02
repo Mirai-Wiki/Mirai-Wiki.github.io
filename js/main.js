@@ -12,12 +12,6 @@ const isMobile = window.matchMedia("(any-hover: none)").matches;
 
 const createdNodes = [];
 
-// Position left column 
-leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
-window.addEventListener("resize", () => {
-    leftCol.style = `left: ${article.offsetLeft - leftCol.offsetWidth}px;`;
-});
-
 // Manage scrolling
 article.addEventListener("scroll", (evt) => {
     window.sessionStorage.setItem(ARTICLE_KEY, evt.target.scrollTop);

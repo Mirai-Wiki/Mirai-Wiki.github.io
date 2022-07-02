@@ -166,15 +166,13 @@ ol, ul {
 
 @media screen and (max-width: 740px) {
     #page-content {
-        display: flex;
-        flex-direction: column;
-        height: 100vh;
-        max-height: -webkit-fill-available;
+        display: block;
     }
 
     #page-content-left-column {
-        position: static;
-        top: 0px;
+        display: grid;
+        position: fixed;
+        bottom: 0px;
         left: 0px;
         min-width: 100vw;
         height: 4rem;
@@ -182,6 +180,7 @@ ol, ul {
 
     .navbar {
         width: 100%;
+        height: 100%;
     }
 
     .navbar-list {
@@ -189,6 +188,8 @@ ol, ul {
     }
 
     #page-content-center-column {
+        display: block;
+        max-height: calc(100vh - 4rem);
     }
 }
 
