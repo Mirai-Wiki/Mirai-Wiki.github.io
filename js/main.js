@@ -468,6 +468,7 @@ if ("serviceWorker" in navigator)
 }
 
 // PWA mobile scroll fix
-window.addEventListener("touchend", () => {
+window.addEventListener("scroll", (evt) => {
+    evt.preventDefault();
     window.scrollTo(0,0)
 });
