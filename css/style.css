@@ -181,7 +181,7 @@ ol, ul {
     }
 
     #page-content-left-column {
-        display: grid;
+        display: block;
         flex: 0 0 var(--menu-button-mobile-width);
         min-width: 100vw;
         height: var(--menu-button-mobile-width);
@@ -194,11 +194,12 @@ ol, ul {
 
     .navbar-list {
         flex-direction: row;
+        justify-content: center;
     }
 
     .navbar-list-item {
-        width: var(--menu-button-mobile-width);
         height: var(--menu-button-mobile-width);
+        border: none;
     }
 
     .navbar-list-item svg {
