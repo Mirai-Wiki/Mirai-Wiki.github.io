@@ -3,8 +3,8 @@
     --menu-button-width: 4rem;
     --icon-height: 1.6rem;
 
-    --menu-button-mobile-width: 2.5rem;
-    --icon-mobile-height: 1.3rem;
+    --menu-button-mobile-width: 3rem;
+    --icon-mobile-height: 1.5rem;
 }
 
 *:not(li):not(ol) {
