@@ -18,6 +18,7 @@ To use the bash scripts, some dependecies are involved :
 - **watchexec**, to look for changes in some folders to automate the convertion process and some handy stuff
 - **jq**, to manage all json related things
 - **live-server**, to see changes in realtime
+- **tree**, to generate the folder architecture
 
 ## Markdown pages requirements
 
