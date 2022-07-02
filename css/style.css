@@ -12,7 +12,6 @@ body {
     position: fixed;
     width: 100%;
     max-height: -webkit-fill-available;
-    user-select: none;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
 }
