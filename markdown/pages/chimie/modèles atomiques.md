@@ -22,7 +22,7 @@ Les atomes possèdent un noyau positif, les électrons gravitent autour de ce-de
 ![](modele-rutherford.png)
 
 ## Modèle de Bohr (1913)
-Les électrons gravitent autour du noyau sur des orbites précises, ce sont les [couches électroniques](chimie/couches%20électroniques.md) :
+Les électrons gravitent autour du noyau sur des orbites précises, ce sont les [couches électroniques](pages/chimie/couches%20électroniques.md) :
 
 ![](modele-bohr.png)
 

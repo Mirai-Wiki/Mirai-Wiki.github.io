@@ -5,13 +5,12 @@ echo '' > ./data/temp.json
 echo '$meta-json$' > /tmp/metadata.pandoc-tpl
 
 echo "[" > ./data/temp.json
-find ./markdown -name "*.md" -not -path "./markdown/Excalidraw/*" -not -path "./markdown/filters/*" -not -path "./markdown/templates/*" -not -path "./markdown/homepage.md" |
-sort |
+tree ./markdown/pages -P "*.md" --dirsfirst -f -i | grep '\.md$' |
 while read file ;
 do
     pandoc "$file" --template=/tmp/metadata.pandoc-tpl | 
     jq '.folder |= "'$(dirname "$file" | 
-    cut -d '/' -f3- | rev | cut -f 2- -d '.' | rev)'"' |
+    cut -d '/' -f4- | rev | cut -f 2- -d '.' | rev)'"' |
     xargs -0 -I {} echo '{},' >> ./data/temp.json
 done;
 head -n -1 ./data/temp.json > ./data/pages.json

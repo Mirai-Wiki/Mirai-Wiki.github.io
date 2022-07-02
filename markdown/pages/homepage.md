@@ -27,4 +27,4 @@ Il est probable qu'une application officielle émerge prochainement sur le *Goog
 	- [ ] => Gestion des paramètres du compte (pas encore implémenté)
 
 ## Pages en vrac
-- [modèles atomiques](chimie/modèles%20atomiques.md)
+- [modèles atomiques](pages/chimie/modèles%20atomiques.md)
