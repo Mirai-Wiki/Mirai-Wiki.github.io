@@ -1,4 +1,7 @@
 /* GENERAL */
+:root {
+}
+
 *:not(li):not(ol) {
     margin: 0;
     padding: 0;
@@ -22,6 +25,8 @@ ol, ul {
 
 #page-content {
     display: flex;
+    height: 100vh;
+    max-height: -webkit-fill-available;
 }
 
 /* PAGE CONTAINER STYLING */
@@ -166,14 +171,13 @@ ol, ul {
 
 @media screen and (max-width: 740px) {
     #page-content {
-        display: block;
+        display: flex;
+        flex-direction: column-reverse;
     }
 
     #page-content-left-column {
         display: grid;
-        position: fixed;
-        bottom: 0px;
-        left: 0px;
+        flex: 0 0 4rem;
         min-width: 100vw;
         height: 4rem;
     }
@@ -188,8 +192,6 @@ ol, ul {
     }
 
     #page-content-center-column {
-        display: block;
-        max-height: calc(100vh - 4rem);
     }
 }
 
