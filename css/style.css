@@ -105,6 +105,10 @@ ol, ul {
     overflow-y: auto;
 }
 
+.menu-active {
+    width: 13rem;
+}
+
 .tree-item {
     color: yellow;
 }
@@ -185,7 +189,7 @@ ol, ul {
         flex: 0 0 var(--menu-button-mobile-width);
         min-width: 100vw;
         height: var(--menu-button-mobile-width);
-        border-radius: 10px 10px 0 0;
+        border-radius: 15px 15px 0 0;
     }
 
     .navbar {
@@ -208,7 +212,18 @@ ol, ul {
         height: var(--icon-mobile-height);
     }
 
-    #page-content-center-column {
+    .extend-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0px;
+        height: 100vh;
+        max-height: -webkit-fill-available;
+        background-color: orange;
+    }
+
+    .menu-active {
+        width: 70%;
     }
 }
 

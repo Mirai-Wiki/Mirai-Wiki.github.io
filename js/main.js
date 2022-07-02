@@ -9,6 +9,7 @@ const tocList = document.querySelector(".toc-container");
 const navbar = document.querySelector(".navbar-list");
 
 const isMobile = window.matchMedia("(any-hover: none)").matches;
+let isMinUI = window.innerWidth <= 740;
 
 const createdNodes = [];
 
@@ -21,6 +22,11 @@ window.addEventListener("load", () => {
     const articleScrollY = sessionStorage.getItem(ARTICLE_KEY) || 0;
 
     article.scrollTo(0, articleScrollY);
+});
+
+// Manage resize (isMinUI)
+window.addEventListener("resize", () => {
+    isMinUI = window.innerWidth <= 740;
 });
 
 // Load menu (json)
@@ -371,19 +377,44 @@ window.addEventListener("load", () => {
 
     navbar.querySelector("#nav-pages").addEventListener("click", () => {
         const extend = leftCol.querySelector("#extend-pages");
-        if (extend.clientWidth <= 0)
-        {
-            extend.style = `
-                width: 13rem;
-            `;
-        }
-        else
-        {
-            extend.style = `
-                width: 0px;
-            `;
-        }
+        extend.classList.toggle("menu-active");
     });
+
+    if (isMobile)
+    {
+        window.addEventListener("touchstart", (evt) => {
+            if (isMinUI)
+            {
+                const touch = evt.touches[0];
+                mouse.x = touch.clientX;
+                mouse.y = touch.clientY;
+            }
+        });
+
+        window.addEventListener("touchend", (evt) => {
+            if (isMinUI)
+            {
+                if (mouse.x > window.innerWidth * 0.7)
+                {
+                    const extend = leftCol.querySelector("#extend-pages");
+                    extend.classList.remove("menu-active");
+                }
+            }
+        });
+    }
+    else
+    {
+        window.addEventListener("mouseup", (evt) => {
+            if (isMinUI)
+            {
+                if (evt.clientX > window.innerWidth * 0.7)
+                {
+                    const extend = leftCol.querySelector("#extend-pages");
+                    extend.classList.remove("menu-active");
+                }
+            }
+        });
+    }
 });
 
 // Rooter
