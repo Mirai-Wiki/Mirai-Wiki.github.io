@@ -110,7 +110,9 @@ window.addEventListener("load", async () => {
             const node = getFolderMaxDeep(treePages, tokens);
             const treeItem = document.createElement("li");
             treeItem.classList.add("tree-item");
-            treeItem.innerHTML = value.title;
+            treeItem.innerHTML = `
+                <a href="#/pages/${value.folder}/${value.title}">${value.title}</a>
+            `;
 
             node.querySelector("ol").appendChild(treeItem);
         }
@@ -118,7 +120,9 @@ window.addEventListener("load", async () => {
         {
             const treeItem = document.createElement("li");
             treeItem.classList.add("tree-item");
-            treeItem.innerHTML = value.title;
+            treeItem.innerHTML = `
+                <a href="#/pages/${value.title}">${value.title}</a>
+            `;
 
             treePages.querySelector("ol").appendChild(treeItem);
         }
