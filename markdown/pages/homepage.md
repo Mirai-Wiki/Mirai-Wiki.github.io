@@ -19,7 +19,7 @@ Il est probable qu'une application officielle émerge prochainement sur le *Goog
 
 ## TODO-List
 - [x] ~~Afficher les pages du menu (architecture dossier)~~
-- [ ] Pages du menu cliquables
+- [x] ~~Pages du menu cliquables~~
 - [ ] Modifier le menu pour les appareils mobiles (le rendre plus ergonomique)
 - [ ] Implémenter le mode clair/sombre (bouton du menu)
 - [ ] Rendre fonctionnel le bouton des paramètres
