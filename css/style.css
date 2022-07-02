@@ -99,6 +99,14 @@ ol, ul {
     color: yellow;
 }
 
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
 /* CENTER COLUMN */
 #page-content-center-column {
     background-color: dimgrey;
