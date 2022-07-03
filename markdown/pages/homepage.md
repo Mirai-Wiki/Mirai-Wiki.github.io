@@ -18,6 +18,7 @@ Il est possible qu'une application officielle émerge un jour dans le *Google Pl
 - [x] ~~Afficher les pages du menu (architecture dossier)~~
 - [x] ~~Pages du menu cliquables~~
 - [x] ~~Modifier le menu pour les appareils mobiles (le rendre plus ergonomique)~~
+- [ ] Supprimer la page **homepage** du menu des pages
 - [ ] Implémenter le mode clair/sombre (bouton du menu)
 - [ ] Rendre fonctionnel le bouton des paramètres
 	- [ ] => Choisir un thème
@@ -25,6 +26,11 @@ Il est possible qu'une application officielle émerge un jour dans le *Google Pl
 - [ ] Formatter le contenu des pages (les rendre plus attractives visuellement)
 - [ ] Travestir chaque recoin du site afin de le rendre beau...
 - [ ] Corriger les bugs liés au *preview* des pages (sur ordinateur seulement)
+- [ ] Peupler le site de 5 vraies pages
+- [ ] Peupler le site de 10 de pages
+- [ ] Peupler le site de 25 pages
+- [ ] Peupler le site de 50 pages
+- [ ] Peupler le site de 100 pages !
 
 ## Pages en vrac
 - [modèles atomiques](pages/chimie/modèles%20atomiques.md)
