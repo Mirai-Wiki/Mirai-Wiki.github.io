@@ -14,6 +14,9 @@ Pour l'instant, le projet n'est officiellement qu'un site internet et ne figure 
 
 Il est possible qu'une application officielle émerge un jour dans le *Google Play Store* quand le projet sera suffisamment avancé.
 
+## Erreurs dans le contenu
+Evidemment, des erreurs sont probablement présentes dans le contenu des pages. Les plus fréquentes sont sûrement des fautes d'orthographes mais des informations erronées peuvent également être présentes. Pour l'instant, aucun moyen de communication n'est disponible pour signaler des erreurs.
+
 ## TODO-List
 - [x] ~~Afficher les pages du menu (architecture dossier)~~
 - [x] ~~Pages du menu cliquables~~
@@ -23,6 +26,8 @@ Il est possible qu'une application officielle émerge un jour dans le *Google Pl
 - [ ] Rendre fonctionnel le bouton des paramètres
 	- [ ] => Choisir un thème
 	- [ ] => Gestion des paramètres du compte (pas encore implémenté)
+- [ ] Faire un vrai logo pour l'application mobile
+- [ ] Optimiser l'application mobile (serviceWorker)
 - [ ] Formatter le contenu des pages (les rendre plus attractives visuellement)
 - [ ] Travestir chaque recoin du site afin de le rendre beau...
 - [ ] Corriger les bugs liés au *preview* des pages (sur ordinateur seulement)
