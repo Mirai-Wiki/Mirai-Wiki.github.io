@@ -33,7 +33,7 @@ Evidemment, des erreurs sont probablement présentes dans le contenu des pages. 
 - [ ] Corriger les bugs liés au *preview* des pages (sur ordinateur seulement)
 - [ ] Ajouter la recherche de pages
 - [ ] Prévenir les messages d'erreurs dans la console lorsqu'une page n'existe pas
-- [ ] Implémenter un thème par défaut cohérant (gruvbox)
+- [x] ~~Implémenter un thème par défaut cohérant (gruvbox)~~
 - [ ] Peupler le site de 5 vraies pages
 - [ ] Peupler le site de 10 de pages
 - [ ] Peupler le site de 25 pages

@@ -7,8 +7,12 @@
         "id": "8eca17cc3fb978bb",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "pages/homepage.md",
+            "mode": "source",
+            "source": false
+          }
         }
       }
     ],
@@ -65,6 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "pages/homepage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -84,8 +89,8 @@
   },
   "active": "8eca17cc3fb978bb",
   "lastOpenFiles": [
-    "Excalidraw/modele-dalton.md",
     "pages/homepage.md",
+    "Excalidraw/modele-dalton.md",
     "Excalidraw/logo.svg",
     "Excalidraw/logo.md",
     "pages/chimie/couches électroniques.md",

@@ -70,6 +70,9 @@ ol, ul {
     padding-left: 2rem;
 }
 
+.page-container h1, h2, h3, h4, h5, h6 {
+}
+
 .page-container h1 {
     text-align: center;
 }
