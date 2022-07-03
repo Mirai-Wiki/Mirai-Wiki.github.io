@@ -145,7 +145,7 @@ ol, ul {
     flex: 1 1;
     height: 100vh;
     max-height: -webkit-fill-available;
-    padding: 0 0.5rem;
+    padding: max(0px, env(safe-area-inset-top)) max(0.5rem, env(safe-area-inset-right)) 0 max(0.5rem, env(safe-area-inset-left));
 }
 
 #page-content-center-column > * {
@@ -190,6 +190,7 @@ ol, ul {
         min-width: 100vw;
         height: var(--menu-button-mobile-width);
         border-radius: 15px 15px 0 0;
+        padding-bottom: max(0px, env(safe-area-inset-bottom));
     }
 
     .navbar {
