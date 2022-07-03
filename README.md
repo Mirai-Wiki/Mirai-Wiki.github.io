@@ -8,7 +8,7 @@ More information about the purpose and the content of the website soon...
 
 - All the bash scripts have nothing to do with the website, there are just scripts to help me improve my workflow.
 - The `_config.yml` file is required to tell Jekyll how to build the website.
-- All the files in the `markdown/` folder are just the pages that are then converted to *.html* (using **pandoc**) by some bash scripts.
+- All the files in the `markdown/pages/` folder are just the pages that are then converted to *.html* (using **pandoc**) by some bash scripts.
 
 ## Workflow
 
@@ -22,7 +22,7 @@ To use the bash scripts, some dependecies are involved :
 
 ## Markdown pages requirements
 
-To generate the `pages.json` file, every `.md` files in the `markdown/` folder should contain a **yaml header** that have a `title: ...` field at least.
+To generate the `data/pages.json` file, every `.md` files in the `markdown/pages` folder should contain a **yaml header** that have a `title: ...` field at least.
 This field will be the name displayed to the user in the menu of the website.
 
 ## How to use?
