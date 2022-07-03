@@ -191,7 +191,6 @@ ol, ul {
         height: var(--menu-button-mobile-width);
         border-radius: 15px 15px 0 0;
         padding-bottom: max(0px, env(safe-area-inset-bottom));
-        vertical-align: baseline;
     }
 
     .navbar {
@@ -221,6 +220,8 @@ ol, ul {
         width: 0px;
         height: 100vh;
         max-height: -webkit-fill-available;
+        max-height: -moz-available;
+        max-height: fill-available;
         background-color: orange;
     }
 
