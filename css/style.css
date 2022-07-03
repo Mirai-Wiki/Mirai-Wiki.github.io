@@ -183,6 +183,7 @@ ol, ul {
     #page-content {
         display: flex;
         flex-direction: column-reverse;
+        height: 100%;
     }
 
     #page-content-left-column {
