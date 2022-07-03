@@ -5,6 +5,12 @@
 
     --menu-button-mobile-width: 3rem;
     --icon-mobile-height: 1.5rem;
+
+    /* GRUVBOX THEME */
+    --bg: #282828;
+    --fg: #ebdbb2;
+    --h1: #cc241d;
+    --h2: #d65d0e;
 }
 
 *:not(li):not(ol) {
@@ -19,7 +25,8 @@ html {
 body {
     font-family: Sans-serif;
     overflow: hidden;
-    background-color: dimgrey;
+    background-color: var(--bg);
+    color: var(--fg);
     overscroll-behavior-y: contain;
     position: fixed;
     width: 100%;
@@ -27,6 +34,14 @@ body {
     max-height: -webkit-fill-available;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
+}
+
+h1 {
+    color: var(--h1);
+}
+
+h2 {
+    color: var(--h2);
 }
 
 ol, ul {
@@ -44,10 +59,19 @@ ol, ul {
     word-break: break-word;
     overflow-x: hidden;
     overflow-y: auto;
+    line-height: 1.6;
+}
+
+.page-container ul {
+    padding-left: 2rem;
 }
 
 .page-container h1 {
     text-align: center;
+}
+
+.page-container p, li {
+    font-size: 18px;
 }
 
 .page-container img {
@@ -63,7 +87,6 @@ ol, ul {
     min-width: var(--menu-button-width);
     height: 100vh;
     max-height: -webkit-fill-available;
-    background-color: grey;
 }
 
 .navbar {
@@ -115,7 +138,6 @@ ol, ul {
 }
 
 .tree-item {
-    color: yellow;
 }
 
 .caret {
@@ -146,7 +168,6 @@ ol, ul {
 
 /* CENTER COLUMN */
 #page-content-center-column {
-    background-color: dimgrey;
     flex: 1 1;
     height: 100vh;
     max-height: -webkit-fill-available;
@@ -162,7 +183,6 @@ ol, ul {
 /* RIGHT COLUMN */
 #page-content-right-column {
     min-width: 300px;
-    background-color: dimgrey;
     height: 100vh;
     max-height: -webkit-fill-available;
     overflow: hidden;
@@ -228,7 +248,6 @@ ol, ul {
         max-height: -webkit-fill-available;
         max-height: -moz-available;
         max-height: fill-available;
-        background-color: orange;
     }
 
     .menu-active {

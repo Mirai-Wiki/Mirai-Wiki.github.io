@@ -21,16 +21,19 @@ Evidemment, des erreurs sont probablement présentes dans le contenu des pages. 
 - [x] ~~Afficher les pages du menu (architecture dossier)~~
 - [x] ~~Pages du menu cliquables~~
 - [x] ~~Modifier le menu pour les appareils mobiles (le rendre plus ergonomique)~~
-- [ ] Supprimer la page **homepage** du menu des pages
+- [x] ~~Supprimer la page **homepage** du menu des pages~~
 - [ ] Implémenter le mode clair/sombre (bouton du menu)
 - [ ] Rendre fonctionnel le bouton des paramètres
-	- [ ] => Choisir un thème
-	- [ ] => Gestion des paramètres du compte (pas encore implémenté)
+	- [ ] Choisir un thème
+	- [ ] Gestion des paramètres du compte (pas encore implémenté)
 - [x] ~~Faire un vrai logo pour l'application mobile~~
 - [ ] Optimiser l'application mobile (serviceWorker)
 - [ ] Formatter le contenu des pages (les rendre plus attractives visuellement)
 - [ ] Travestir chaque recoin du site afin de le rendre beau...
 - [ ] Corriger les bugs liés au *preview* des pages (sur ordinateur seulement)
+- [ ] Ajouter la recherche de pages
+- [ ] Prévenir les messages d'erreurs dans la console lorsqu'une page n'existe pas
+- [ ] Implémenter un thème par défaut cohérant (gruvbox)
 - [ ] Peupler le site de 5 vraies pages
 - [ ] Peupler le site de 10 de pages
 - [ ] Peupler le site de 25 pages

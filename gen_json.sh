@@ -5,7 +5,7 @@ echo '' > ./data/temp.json
 echo '$meta-json$' > /tmp/metadata.pandoc-tpl
 
 echo "[" > ./data/temp.json
-tree ./markdown/pages -P "*.md" --dirsfirst -f -i | grep '\.md$' |
+tree ./markdown/pages -P "*.md" --dirsfirst -f -i | grep '\.md$' | grep -v './markdown/pages/homepage.md$' |
 while read file ;
 do
     pandoc "$file" --template=/tmp/metadata.pandoc-tpl | 
