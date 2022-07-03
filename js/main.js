@@ -8,7 +8,7 @@ const article = document.querySelector("#page-content-center-column");
 const tocList = document.querySelector(".toc-container");
 const navbar = document.querySelector(".navbar-list");
 
-const isMobile = window.matchMedia("(any-hover: none)").matches;
+const isMobile = window.matchMedia("(pointer: coarse)").matches;
 let isMinUI = window.innerWidth <= 740;
 
 const createdNodes = [];

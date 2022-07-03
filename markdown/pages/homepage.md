@@ -26,7 +26,7 @@ Evidemment, des erreurs sont probablement présentes dans le contenu des pages. 
 - [ ] Rendre fonctionnel le bouton des paramètres
 	- [ ] => Choisir un thème
 	- [ ] => Gestion des paramètres du compte (pas encore implémenté)
-- [ ] Faire un vrai logo pour l'application mobile
+- [x] ~~Faire un vrai logo pour l'application mobile~~
 - [ ] Optimiser l'application mobile (serviceWorker)
 - [ ] Formatter le contenu des pages (les rendre plus attractives visuellement)
 - [ ] Travestir chaque recoin du site afin de le rendre beau...
