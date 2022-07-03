@@ -12,6 +12,10 @@
     padding: 0;
 }
 
+html {
+    height: 100%;
+}
+
 body {
     font-family: Sans-serif;
     overflow: hidden;
@@ -183,7 +187,7 @@ ol, ul {
     #page-content {
         display: flex;
         flex-direction: column-reverse;
-        height: 100%;
+        min-height: 100%;
     }
 
     #page-content-left-column {
@@ -229,6 +233,11 @@ ol, ul {
 
     .menu-active {
         width: 70%;
+    }
+
+    .page-content-center-column {
+        height: 100%;
+        max-height: 100%;
     }
 }
 
