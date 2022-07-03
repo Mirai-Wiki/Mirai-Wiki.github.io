@@ -8,9 +8,13 @@
 
     /* GRUVBOX THEME */
     --bg: #282828;
+    --bg-menu: #3c3836;
+    --bg-extend: #d79921;
+    --bg-img: #928374;
     --fg: #ebdbb2;
     --h1: #cc241d;
     --h2: #d65d0e;
+    --border: #d79921;
 }
 
 *:not(li):not(ol) {
@@ -79,6 +83,8 @@ ol, ul {
     max-width: 100%;
     margin-left: auto;
     margin-right: auto;
+    background-color: var(--bg-img);
+    border-radius: 20px;
 }
 
 /* LEFT COLUMN */
@@ -87,6 +93,7 @@ ol, ul {
     min-width: var(--menu-button-width);
     height: 100vh;
     max-height: -webkit-fill-available;
+    background-color: var(--bg-menu);
 }
 
 .navbar {
@@ -99,7 +106,7 @@ ol, ul {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-right: 1px solid orange;
+    border-right: 1px solid var(--border);
 }
 
 .navbar-list-item {
@@ -109,7 +116,7 @@ ol, ul {
     height: var(--menu-button-width);
     width: var(--menu-button-width);
     cursor: pointer;
-    border: 1px solid black;
+    border: 1px solid var(--border);
 }
 
 .navbar-list-item:nth-last-child(2) {
@@ -244,10 +251,8 @@ ol, ul {
         top: 0;
         left: 0;
         width: 0px;
-        height: 100vh;
-        max-height: -webkit-fill-available;
-        max-height: -moz-available;
-        max-height: fill-available;
+        height: 100%;
+        background-color: var(--bg-extend);
     }
 
     .menu-active {
@@ -281,7 +286,7 @@ ol, ul {
 
 ::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    background: orange;
+    background: var(--border);
 }
 
 ::-webkit-scrollbar-corner {
