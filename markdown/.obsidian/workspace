@@ -7,11 +7,9 @@
         "id": "5b9f2123f0e1ad94",
         "type": "leaf",
         "state": {
-          "type": "markdown",
+          "type": "image",
           "state": {
-            "file": "pages/homepage.md",
-            "mode": "source",
-            "source": false
+            "file": "Excalidraw/logo.svg"
           }
         }
       }
@@ -69,7 +67,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages/homepage.md",
+                "file": "Excalidraw/logo.svg",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +87,8 @@
   },
   "active": "5b9f2123f0e1ad94",
   "lastOpenFiles": [
+    "Excalidraw/logo.svg",
+    "Excalidraw/logo.md",
     "pages/homepage.md",
     "pages/chimie/couches électroniques.md",
     "pages/chimie/modèles atomiques.md",
@@ -96,8 +96,6 @@
     "pages/chimie/test2.md",
     "pages/caca.md",
     "pages/a/ba/bic.md",
-    "pages/a/aa.md",
-    "pages/b/zz.md",
-    "z/zz.md"
+    "pages/a/aa.md"
   ]
 }

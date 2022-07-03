@@ -1,11 +1,11 @@
 {
-  "name": "Mirai Wiki",
-  "short_name": "Mirai Wiki",
-  "start_url": "index.html",
-  "display": "standalone",
-  "background_color": "#696969",
-  "theme_color": "#696969",
-  "orientation": "portrait-primary",
+    "name": "Mirai Wiki",
+    "short_name": "Mirai Wiki",
+    "start_url": "index.html",
+    "display": "standalone",
+    "background_color": "#696969",
+    "theme_color": "#696969",
+    "orientation": "portrait-primary",
     "icons": [
     {
       "src": "android/android-launchericon-512-512.png",
@@ -135,5 +135,5 @@
       "src": "ios/1024.png",
       "sizes": "1024x1024"
     }
-  ]
+    ]
 }
