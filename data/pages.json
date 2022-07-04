@@ -1,19 +1,8 @@
 [
 {
-  "title": "bic",
-  "folder": "a/ba"
-}
-,
-{
-  "date": "2022-07-01",
-  "title": "aa",
-  "folder": "a"
-}
-,
-{
-  "date": "2022-07-01",
-  "title": "zz",
-  "folder": "b"
+  "date": "2022-07-04",
+  "title": "atome",
+  "folder": "chimie"
 }
 ,
 {
@@ -23,25 +12,14 @@
 }
 ,
 {
+  "date": "2022-07-04",
+  "title": "électron",
+  "folder": "chimie"
+}
+,
+{
   "date": "2022-07-01",
   "title": "modèles atomiques",
   "folder": "chimie"
-}
-,
-{
-  "date": "2022-07-01",
-  "title": "test2",
-  "folder": "chimie"
-}
-,
-{
-  "date": "2022-07-01",
-  "title": "test",
-  "folder": "chimie"
-}
-,
-{
-  "title": "caca",
-  "folder": ""
 }
 ]
