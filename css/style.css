@@ -187,7 +187,6 @@ ol, ul {
 
 .caret {
     cursor: pointer;
-    user-select: none;
 }
 
 .caret::before {
