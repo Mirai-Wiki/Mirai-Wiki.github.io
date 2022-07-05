@@ -38,6 +38,7 @@ body {
     max-height: -webkit-fill-available;
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
+    background-color: var(--bg);
 }
 
 h1 {
@@ -68,7 +69,6 @@ ol, ul {
     overflow-x: hidden;
     overflow-y: auto;
     line-height: 1.6;
-    background-color: var(--bg);
 }
 
 .page-container ul {
@@ -100,6 +100,7 @@ ol, ul {
     width: 400px;
     height: 500px;
     border: 1px solid var(--border);
+    background-color: var(--bg);
 }
 
 /* LEFT COLUMN */
@@ -145,6 +146,14 @@ ol, ul {
 
 .navbar-list-item svg {
     height: var(--icon-height);
+}
+
+.searchbar-container {
+    text-align: center;
+}
+
+.searchbar {
+    width: 80%;
 }
 
 .extend-menu {
@@ -271,7 +280,7 @@ ol, ul {
     }
 
     .menu-active {
-        width: 70%;
+        width: 80%;
     }
 
     #page-content-center-column {
