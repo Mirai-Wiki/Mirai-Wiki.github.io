@@ -138,6 +138,7 @@ window.addEventListener("load", async () => {
 // IOS fix scrolling keyboard
 document.addEventListener("touchmove", this._preventDefault, { passive: false });
 document.addEventListener("touchforcechange", this._preventDefault, { passive: false });
+
 window.addEventListener("click", () => {
     searchResult.hidden = true;
 });
