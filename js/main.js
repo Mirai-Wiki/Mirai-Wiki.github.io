@@ -240,9 +240,6 @@ async function popupPreview(evt)
         position: absolute;
         top: ${linkBox.bottom}px;
         left: ${mouse.x - 10}px;
-        width: 400px;
-        height: 500px;
-        background-color: silver;
     `;
 
     pageContent.appendChild(previewContainer);
