@@ -507,8 +507,3 @@ if ("serviceWorker" in navigator)
             .catch((err) => console.log("serviceWorker not ok"));
     });
 }
-
-// PWA mobile scroll fix
-window.addEventListener("touchend", () => {
-    window.scrollTo(0,0)
-});
