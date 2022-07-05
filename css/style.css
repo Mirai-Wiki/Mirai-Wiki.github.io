@@ -187,6 +187,7 @@ ol, ul {
 
 .caret {
     cursor: pointer;
+    user-select: none;
 }
 
 .caret::before {
@@ -311,6 +312,11 @@ ol, ul {
 }
 
 @media (display-mode: standalone) {
+    body {
+        -webkit-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
 }
 
 /* SCROLLBAR */
