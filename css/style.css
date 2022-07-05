@@ -312,7 +312,7 @@ ol, ul {
 }
 
 @media (display-mode: standalone) {
-    body {
+    p {
         -webkit-user-select: none;
         -ms-user-select: none;
         user-select: none;
