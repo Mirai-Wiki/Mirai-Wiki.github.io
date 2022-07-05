@@ -7,6 +7,10 @@ const leftCol = document.querySelector("#page-content-left-column");
 const article = document.querySelector("#page-content-center-column");
 const tocList = document.querySelector(".toc-container");
 const navbar = document.querySelector(".navbar-list");
+const searchbar = document.querySelector(".searchbar");
+const searchResult = document.querySelector(".search-result-container");
+
+let data = null;
 
 const isMobile = window.matchMedia("(pointer: coarse)").matches;
 let isMinUI = window.innerWidth <= 740;
@@ -95,6 +99,7 @@ function createFolderRecursive(treeNodes, absoluteFolderTokens, currentSearch=0)
 window.addEventListener("load", async () => {
     const res = await fetch("/data/pages.json");
     const states = await res.json();
+    data = states;
 
     const treePages = leftCol.querySelector("#extend-pages");
 
@@ -130,11 +135,44 @@ window.addEventListener("load", async () => {
 });
 
 // Searching
-//window.addEventListener("click", () => {
-    //searchResult.hidden = true;
-//});
+window.addEventListener("click", () => {
+    searchResult.hidden = true;
+});
 
-//searchBar.addEventListener("input", () => {
+searchbar.addEventListener("input", () => {
+    if (searchbar.value.length > 0 && data !== null)
+    {
+        searchResult.hidden = false;
+        const rect = searchbar.getBoundingClientRect();
+        const posX = rect.left;
+        const posY = rect.bottom + 3;
+        searchResult.style.left = `${posX}px`;
+        searchResult.style.top = `${posY}px`;
+
+        const matches = data.filter((state) => {
+            const regex = new RegExp(searchbar.value, "gi");
+            return state.title.match(regex);
+        });
+
+        if (matches.length > 0)
+        {
+            console.log(matches);
+            const html = matches.map((match) => `
+                <a href="#/pages/${match.folder}/${match.title}">${match.title}</a>
+            `).join('');
+
+            searchResult.innerHTML = html;
+        }
+        else
+        {
+            searchResult.innerHTML = "<p>Aucun résultat...</p>";
+        }
+    }
+    else
+    {
+        searchResult.hidden = true;
+        searchResult.innerHTML = '';
+    }
     //const allPages = menu.querySelectorAll(".page-name-item");
     //const lstPages = [...allPages].map(e=>e.innerHTML);
 
@@ -170,7 +208,7 @@ window.addEventListener("load", async () => {
         //searchResult.hidden = true;
         //searchResult.innerHTML = '';
     //}
-//});
+});
 
 // Mouse
 const mouse = new Mouse();
@@ -439,6 +477,11 @@ window.addEventListener("hashchange", async () => {
     {
         destroyPreviews();
         removePreviews();
+    }
+
+    if (isMinUI)
+    {
+        document.querySelector("#extend-pages").classList.remove("menu-active");
     }
 
     const fileName = window.location.hash.slice(2) || 'pages/homepage';

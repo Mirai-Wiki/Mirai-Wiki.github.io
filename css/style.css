@@ -211,6 +211,14 @@ ol, ul {
     display: block;
 }
 
+.search-result-container {
+    position: absolute;
+    background-color: var(--bg-img);
+    max-width: 10rem;
+    max-height: 10rem;
+    overflow: auto;
+}
+
 /* CENTER COLUMN */
 #page-content-center-column {
     flex: 1 1;
