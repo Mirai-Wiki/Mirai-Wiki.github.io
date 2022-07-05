@@ -136,8 +136,32 @@ window.addEventListener("load", async () => {
 
 // Searching
 // IOS fix scrolling keyboard
-document.addEventListener("touchmove", this._preventDefault, { passive: false });
-document.addEventListener("touchforcechange", this._preventDefault, { passive: false });
+function disableScroll()
+{
+    console.log("disable");
+    document.addEventListener("touchmove", (evt) => {
+        evt.preventDefault();
+    }, { passive: false });
+
+    document.addEventListener("touchforcechange", (evt) => {
+        evt.preventDefault();
+    }, { passive: false });
+}
+
+function enableScroll()
+{
+    console.log("enable");
+    document.removeEventListener("touchmove", (evt) => {
+        evt.preventDefault();
+    });
+
+    document.removeEventListener("touchforcechange", (evt) => {
+        evt.preventDefault();
+    });
+}
+
+searchbar.addEventListener("focus", disableScroll);
+searchbar.addEventListener("blur", enableScroll);
 
 window.addEventListener("click", () => {
     searchResult.hidden = true;
