@@ -482,6 +482,7 @@ window.addEventListener("hashchange", async () => {
     if (isMinUI)
     {
         document.querySelector("#extend-pages").classList.remove("menu-active");
+        searchResult.hidden = true;
     }
 
     const fileName = window.location.hash.slice(2) || 'pages/homepage';
