@@ -136,32 +136,26 @@ window.addEventListener("load", async () => {
 
 // Searching
 // IOS fix scrolling keyboard
+const _preventDefault = (e) => e.preventDefault();
+
 function disableScroll()
 {
     console.log("disable");
-    document.addEventListener("touchmove", (evt) => {
-        evt.preventDefault();
-    }, { passive: false });
+    document.addEventListener("touchmove", _preventDefault, { passive: false });
 
-    document.addEventListener("touchforcechange", (evt) => {
-        evt.preventDefault();
-    }, { passive: false });
+    document.addEventListener("touchforcechange", _preventDefault, { passive: false });
 }
 
 function enableScroll()
 {
     console.log("enable");
-    document.removeEventListener("touchmove", (evt) => {
-        evt.preventDefault();
-    });
+    document.removeEventListener("touchmove", _preventDefault, { passive: false });
 
-    document.removeEventListener("touchforcechange", (evt) => {
-        evt.preventDefault();
-    });
+    document.removeEventListener("touchforcechange", _preventDefault, { passive: false });
 }
 
-//searchbar.addEventListener("focus", disableScroll);
-//searchbar.addEventListener("blur", enableScroll);
+searchbar.addEventListener("focus", disableScroll);
+searchbar.addEventListener("blur", enableScroll);
 
 window.addEventListener("click", () => {
     searchResult.hidden = true;
@@ -537,6 +531,6 @@ if ("serviceWorker" in navigator)
 }
 
 // PWA mobile scroll fix
-window.addEventListener("touchend", () => {
-    window.scrollTo(0,0)
-});
+//window.addEventListener("touchend", () => {
+    //window.scrollTo(0,0)
+//});
