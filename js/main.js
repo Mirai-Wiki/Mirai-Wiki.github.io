@@ -160,8 +160,8 @@ function enableScroll()
     });
 }
 
-searchbar.addEventListener("focus", disableScroll);
-searchbar.addEventListener("blur", enableScroll);
+//searchbar.addEventListener("focus", disableScroll);
+//searchbar.addEventListener("blur", enableScroll);
 
 window.addEventListener("click", () => {
     searchResult.hidden = true;
