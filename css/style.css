@@ -18,7 +18,7 @@
     --link: #83a598;
 }
 
-*:not(li):not(ol) {
+*:not(ol) {
     margin: 0;
     padding: 0;
 }
@@ -73,10 +73,6 @@ ol, ul {
     overflow-y: auto;
     line-height: 1.6;
     max-width: 100%;
-}
-
-.page-container ul {
-    padding-left: 2rem;
 }
 
 .page-container h1, h2, h3, h4, h5, h6 {
