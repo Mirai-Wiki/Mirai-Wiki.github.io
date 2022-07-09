@@ -43,6 +43,7 @@ body {
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
     background-color: var(--bg);
+    padding: 0px !important;
 }
 
 h1 {
