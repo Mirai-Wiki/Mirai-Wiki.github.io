@@ -419,11 +419,13 @@ window.addEventListener("load", () => {
     {
         navbar.querySelector("#nav-homepage").addEventListener("touchend", (evt) => {
             window.location.href = "#/pages/homepage";
+            evt.stopPropagation();
         });
 
         navbar.querySelector("#nav-pages").addEventListener("touchend", (evt) => {
             const extend = leftCol.querySelector("#extend-pages");
             extend.classList.toggle("menu-active");
+            evt.stopPropagation();
         });
 
         window.addEventListener("touchstart", (evt) => {
@@ -450,11 +452,13 @@ window.addEventListener("load", () => {
     {
         navbar.querySelector("#nav-homepage").addEventListener("click", (evt) => {
             window.location.href = "#/pages/homepage";
+            evt.stopPropagation();
         });
 
         navbar.querySelector("#nav-pages").addEventListener("click", (evt) => {
             const extend = leftCol.querySelector("#extend-pages");
             extend.classList.toggle("menu-active");
+            evt.stopPropagation();
         });
 
         window.addEventListener("mouseup", (evt) => {
