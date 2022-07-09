@@ -326,6 +326,10 @@ ol, ul {
 }
 
 @media (display-mode: standalone) {
+    * {
+        touch-action: none;
+    }
+
     body {
         -webkit-user-select: none;
         -ms-user-select: none;
