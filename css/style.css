@@ -24,7 +24,7 @@
 }
 
 html {
-    position: fixed;
+    display: block;
     height: 100%;
     width: 100%;
     min-height: 100%;
@@ -32,7 +32,7 @@ html {
 }
 
 body {
-    position: fixed;
+    display: block;
     font-family: Sans-serif;
     color: var(--fg);
     overscroll-behavior-y: contain;
@@ -259,7 +259,7 @@ ol, ul {
 
 @media screen and (max-width: 740px) {
     html {
-        overflow: auto;
+        overflow-y: auto;
         overflow-x: hidden;
     }
 
