@@ -283,6 +283,7 @@ ol, ul {
         height: var(--menu-button-mobile-width);
         border-radius: 15px 15px 0 0;
         padding-bottom: max(0px, env(safe-area-inset-bottom));
+        z-index: 3;
     }
 
     .navbar {
