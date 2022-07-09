@@ -43,7 +43,6 @@ body {
     /*background: linear-gradient(90deg, grey 50%, dimgrey 50%);
      */
     background-color: var(--bg);
-    padding: 0px !important;
 }
 
 h1 {
@@ -281,7 +280,7 @@ ol, ul {
     #page-content-left-column {
         display: block;
         flex: 0 0 var(--menu-button-mobile-width);
-        min-width: 100vw;
+        width: 100%;
         height: var(--menu-button-mobile-width);
         border-radius: 15px 15px 0 0;
         padding-bottom: max(0px, env(safe-area-inset-bottom));
