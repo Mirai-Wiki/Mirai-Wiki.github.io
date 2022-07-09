@@ -87,6 +87,7 @@ ol, ul {
 
 .page-container p, li {
     font-size: 18px;
+    word-break: break-word;
 }
 
 .page-container img {
