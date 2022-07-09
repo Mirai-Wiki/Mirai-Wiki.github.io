@@ -72,6 +72,7 @@ ol, ul {
     overflow-x: hidden;
     overflow-y: auto;
     line-height: 1.6;
+    max-width: 100%;
 }
 
 .page-container ul {
@@ -87,7 +88,6 @@ ol, ul {
 
 .page-container p, li {
     font-size: 18px;
-    word-break: break-word;
 }
 
 .page-container img {
