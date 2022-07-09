@@ -212,7 +212,7 @@ ol, ul {
 }
 
 .search-result-container {
-    position: absolute;
+    position: fixed;
     background-color: var(--bg-img);
     max-width: 10rem;
     max-height: 10rem;
