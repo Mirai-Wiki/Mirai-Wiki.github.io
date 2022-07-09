@@ -406,13 +406,15 @@ function updateTOC()
 
 // Navbar events
 window.addEventListener("load", () => {
-    navbar.querySelector("#nav-homepage").addEventListener("click", () => {
+    navbar.querySelector("#nav-homepage").addEventListener("click", (evt) => {
         window.location.href = "#/pages/homepage";
+        evt.stopPropagation();
     });
 
-    navbar.querySelector("#nav-pages").addEventListener("click", () => {
+    navbar.querySelector("#nav-pages").addEventListener("click", (evt) => {
         const extend = leftCol.querySelector("#extend-pages");
         extend.classList.toggle("menu-active");
+        evt.stopPropagation();
     });
 
     if (isMobile)
