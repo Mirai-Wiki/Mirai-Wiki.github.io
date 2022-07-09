@@ -335,23 +335,3 @@ ol, ul {
         user-select: none;
     }
 }
-
-/* SCROLLBAR */
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 20px;
-    background: black;
-}
-
-::-webkit-scrollbar-thumb {
-    border-radius: 20px;
-    background: var(--border);
-}
-
-::-webkit-scrollbar-corner {
-    background: transparent;
-}
