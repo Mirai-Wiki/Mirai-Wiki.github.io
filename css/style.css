@@ -259,16 +259,16 @@ ol, ul {
 
 @media screen and (max-width: 740px) {
     html {
-        overflow-y: auto;
+        overflow: initial;
         overflow-x: hidden;
     }
 
     body {
-        overflow: auto;
+        overflow: initial;
     }
 
     .page-container {
-        overflow: auto;
+        overflow: initial;
     }
 
     #page-content {
