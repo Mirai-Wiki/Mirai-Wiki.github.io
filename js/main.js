@@ -167,7 +167,7 @@ searchbar.addEventListener("input", () => {
         {
             console.log(matches);
             const html = matches.map((match) => `
-                <a href="#/pages/${match.folder}/${match.title}">${match.title}</a>
+                <a onclick="event.stopPropagation();" href="#/pages/${match.folder}/${match.title}">${match.title}</a>
             `).join('');
 
             searchResult.innerHTML = html;
