@@ -1,4 +1,4 @@
-window.history.scrollRestoration = "manual";
+//window.history.scrollRestoration = "manual";
 
 const ARTICLE_KEY = "article-scroll-y";
 
@@ -18,15 +18,15 @@ let isMinUI = window.innerWidth <= 740;
 const createdNodes = [];
 
 // Manage scrolling
-article.addEventListener("scroll", (evt) => {
-    window.sessionStorage.setItem(ARTICLE_KEY, evt.target.scrollTop);
-});
+//article.addEventListener("scroll", (evt) => {
+    //window.sessionStorage.setItem(ARTICLE_KEY, evt.target.scrollTop);
+//});
 
-window.addEventListener("load", () => {
-    const articleScrollY = sessionStorage.getItem(ARTICLE_KEY) || 0;
+//window.addEventListener("load", () => {
+    //const articleScrollY = sessionStorage.getItem(ARTICLE_KEY) || 0;
 
-    article.scrollTo(0, articleScrollY);
-});
+    //article.scrollTo(0, articleScrollY);
+//});
 
 // Manage resize (isMinUI)
 window.addEventListener("resize", () => {
