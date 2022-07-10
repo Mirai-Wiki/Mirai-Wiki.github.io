@@ -15,3 +15,13 @@ function Image(img)
     img.src = "./images/" .. img.src
     return img 
 end
+
+function Div(el)
+    if el.classes:includes("info") then
+        local info = pandoc.Div("Info")
+        info.attributes.class = "header"
+        table.insert(el.content, 1, info)
+    end
+
+    return el
+end

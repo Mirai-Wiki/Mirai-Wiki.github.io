@@ -10,7 +10,9 @@ Les couches électroniques correspondent à différents niveaux d'énergie. Elle
 
 Chaque couche est identifiée par un nombre `n` indiquant le niveau de la couche, avec `n=1` la couche la plus proche du noyau.
 
-> Historiquement, les couches `n` étaient représentées par les lettres K, L, M, N, O, P, Q.
+::: info
+Historiquement, les couches `n` étaient représentées par les lettres K, L, M, N, O, P, Q.
+:::
 
 Les [électrons](pages/chimie/électron.md) sont répartis autour d'un noyau dans les différentes couches en commençant par remplir la première (`n=1`) jusqu'à la dernière (`n=7`). La répartition se fait selon le tableau suivant :
 
