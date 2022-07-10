@@ -378,7 +378,7 @@ ol, ul {
     #page-content-center-column {
         display: block;
         height: auto;
-        padding-bottom: var(--menu-button-mobile-width);
+        padding-bottom: calc(var(--menu-button-mobile-width) + max(0px, env(safe-area-inset-bottom)));
     }
 }
 
