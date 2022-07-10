@@ -99,10 +99,13 @@ ol, ul {
 
 .page-container th, td {
     text-align: center;
-    border: 1px solid var(--border);
+    border: 2px solid var(--border);
+    padding: 0.3rem 1rem;
+    vertical-align: middle;
 }
 
 .page-container table {
+    width: initial !important;
     border-collapse: collapse;
 }
 
