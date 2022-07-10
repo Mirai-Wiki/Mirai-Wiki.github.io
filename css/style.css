@@ -96,6 +96,25 @@ ol, ul {
     border-radius: 20px;
 }
 
+.page-container th, td {
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.page-container table {
+    border-collapse: collapse;
+}
+
+.page-container thead tr
+{
+    background-color: var(--bg-img);
+}
+
+.page-container tbody tr:hover
+{
+    background-color: var(--bg-menu);
+}
+
 /* PAGE PREVIEW */
 .page-preview {
     width: 400px;

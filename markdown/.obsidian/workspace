@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "pages/chimie/couches électroniques.md",
+            "file": "pages/homepage.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "pages/chimie/couches électroniques.md",
+                "file": "pages/homepage.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,13 +89,13 @@
   },
   "active": "8eca17cc3fb978bb",
   "lastOpenFiles": [
+    "pages/homepage.md",
     "pages/chimie/couches électroniques.md",
     "pages/chimie/électron.md",
     "pages/chimie/modèles atomiques.md",
     "pages/chimie/atome.md",
     "Excalidraw/couches-electroniques.md",
     "Excalidraw/logo.md",
-    "pages/homepage.md",
     "Excalidraw/modele-dalton.md",
     "Excalidraw/logo.svg",
     "pages/chimie/test.md"
