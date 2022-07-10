@@ -73,7 +73,7 @@ ol, ul {
     word-break: break-word;
     overflow-x: hidden;
     overflow-y: auto;
-    line-height: 1.6;
+    line-height: 1.4;
     max-width: 100%;
 }
 
@@ -274,7 +274,7 @@ ol, ul {
 #page-content-center-column > * {
     width: 100%;
     max-width: 740px;
-    margin: 0 auto;
+    margin: 1rem auto;
 }
 
 /* RIGHT COLUMN */
